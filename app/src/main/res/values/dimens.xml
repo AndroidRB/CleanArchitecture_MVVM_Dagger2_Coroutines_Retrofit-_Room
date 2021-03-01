@@ -1,0 +1,64 @@
+<resources>
+    <dimen name="icon_size_small">16dp</dimen>
+    <dimen name="icon_size_normal">24dp</dimen>
+    <dimen name="icon_size_large">32dp</dimen>
+    <dimen name="icon_size_extra_large">48dp</dimen>
+    <dimen name="icon_size_ultra_large">64dp</dimen>
+
+    <dimen name="avatar_size_small">16dp</dimen>
+    <dimen name="avatar_size_normal">24dp</dimen>
+    <dimen name="avatar_size_large">32dp</dimen>
+    <dimen name="avatar_size_extra_large">48dp</dimen>
+    <dimen name="avatar_size_ultra_large">64dp</dimen>
+    <dimen name="avatar_size_mega_large">96dp</dimen>
+
+    <dimen name="margin_extra_small">2dp</dimen>
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_normal">8dp</dimen>
+    <dimen name="margin_large">12dp</dimen>
+    <dimen name="margin_extra_large">16dp</dimen>
+    <dimen name="margin_extra_extra_large">24dp</dimen>
+    <dimen name="margin_ultra_large">32dp</dimen>
+    <dimen name="margin_ultra_larger">48dp</dimen>
+    <dimen name="margin_ultra_ultra_large">64dp</dimen>
+
+    <dimen name="padding_small">4dp</dimen>
+    <dimen name="padding_normal">8dp</dimen>
+    <dimen name="padding_large">12dp</dimen>
+    <dimen name="padding_extra_large">16dp</dimen>
+    <dimen name="padding_extra_larger">24dp</dimen>
+    <dimen name="padding_ultra_large">32dp</dimen>
+    <dimen name="padding_ultra_larger">48dp</dimen>
+
+    <dimen name="text_size_12sp">12sp</dimen>
+    <dimen name="text_size_13sp">13sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="text_size_15sp">15sp</dimen>
+    <dimen name="text_size_16sp">16sp</dimen>
+    <dimen name="text_size_17sp">17sp</dimen>
+    <dimen name="text_size_18sp">18sp</dimen>
+    <dimen name="text_size_20sp">20sp</dimen>
+    <dimen name="text_size_28sp">28sp</dimen>
+
+    <dimen name="letter_spacing_small">-0.10</dimen>
+    <dimen name="letter_spacing_medium">-0.15</dimen>
+    <dimen name="letter_spacing_normal">-0.17</dimen>
+    <dimen name="letter_spacing_large">-0.2</dimen>
+    <dimen name="letter_spacing_extra_large">-0.25</dimen>
+    <dimen name="letter_spacing_ultra_large">-0.5</dimen>
+
+    <dimen name="elevation_extra_small">2dp</dimen>
+    <dimen name="elevation_small">4dp</dimen>
+    <dimen name="elevation_normal">8dp</dimen>
+    <dimen name="elevation_large">12dp</dimen>
+    <dimen name="elevation_extra_large">16dp</dimen>
+    <dimen name="elevation_ultra_large">32dp</dimen>
+
+    <dimen name="card_radius_small">4dp</dimen>
+    <dimen name="card_radius_card">6dp</dimen>
+    <dimen name="card_radius_normal">8dp</dimen>
+    <dimen name="card_radius_large">12dp</dimen>
+    <dimen name="card_radius_extra_large">16dp</dimen>
+    <dimen name="card_radius_extra_extra_large">24dp</dimen>
+    <dimen name="card_radius_ultra_large">32dp</dimen>
+</resources>
