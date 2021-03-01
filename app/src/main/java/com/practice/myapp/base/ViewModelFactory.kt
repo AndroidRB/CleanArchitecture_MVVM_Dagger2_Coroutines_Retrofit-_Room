@@ -2,9 +2,11 @@ package com.practice.myapp.base
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import dagger.MapKey
 import javax.inject.Inject
 import javax.inject.Provider
 import javax.inject.Singleton
+import kotlin.reflect.KClass
 
 @Singleton
 class ViewModelFactory
@@ -31,3 +33,11 @@ class ViewModelFactory
         }
     }
 }
+
+/**
+ * Annotation for having custom keys for view model factory map
+ */
+@Target(AnnotationTarget.FUNCTION, AnnotationTarget.PROPERTY_GETTER, AnnotationTarget.PROPERTY_SETTER)
+@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+@MapKey
+internal annotation class ViewModelKey(val value: KClass<out ViewModel>)

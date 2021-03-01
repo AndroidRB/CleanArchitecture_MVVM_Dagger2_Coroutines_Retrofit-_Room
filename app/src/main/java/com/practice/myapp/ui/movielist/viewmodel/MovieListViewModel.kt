@@ -8,10 +8,11 @@ import com.practice.domain.usecase.GetPopularMoviesUseCase
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
+import javax.inject.Inject
 
-class MovieListViewModel(
+class MovieListViewModel (
     private val getPopularMoviesUseCase: GetPopularMoviesUseCase
-): ViewModel() {
+) : ViewModel() {
 
     private var _popularMovies = MutableLiveData<List<Movie>>()
     val popularMovies = _popularMovies
@@ -24,7 +25,7 @@ class MovieListViewModel(
     fun getPopularMovies() {
         viewModelScope.launch {
             _isLoading.postValue(true)
-            val response: List<Movie>
+            var response: List<Movie> = mutableListOf()
             withContext(Dispatchers.IO) {
                 response = getPopularMoviesUseCase.invoke(page++)
             }
