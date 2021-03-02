@@ -1,10 +1,10 @@
 package com.practice.domain.usecase
 
-import com.practice.data.repository.MovieRepository
+import com.practice.data.repository.MovieRemoteRepository
 import com.practice.domain.mapper.PopularMoviesListMapper
 
 class GetPopularMoviesUseCase(
-    private val repository: MovieRepository,
+    private val repository: MovieRemoteRepository,
     private val popularMoviesListMapper: PopularMoviesListMapper
 ) {
     suspend operator fun invoke(page: Int) =
