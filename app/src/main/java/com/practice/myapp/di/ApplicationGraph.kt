@@ -1,7 +1,10 @@
 package com.practice.myapp.di
 
 import android.app.Application
+import com.practice.data.di.DataModule
+import com.practice.domain.di.DomainModule
 import com.practice.myapp.BaseApplication
+import com.practice.presentation.di.PresentationModule
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjector
@@ -12,10 +15,13 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AndroidSupportInjectionModule::class,
-        AppModule::class
+        AppModule::class,
+        DataModule::class,
+        DomainModule::class,
+        PresentationModule::class
     ]
 )
-interface ApplicationGraph : AndroidInjector<BaseApplication>{
+interface ApplicationGraph : AndroidInjector<BaseApplication> {
 
     @Component.Builder
     interface Builder {
