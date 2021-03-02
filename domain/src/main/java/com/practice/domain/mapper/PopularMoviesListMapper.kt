@@ -1,12 +1,11 @@
 package com.practice.domain.mapper
 
-import android.content.Context
 import com.practice.domain.entity.Movie
 import com.practice.domain.mapper.common.Mapper
+import javax.inject.Inject
 
-class PopularMoviesListMapper(
-    private val context: Context
-) : Mapper<List<com.practice.data.api.model.Movie>, List<Movie>> {
+class PopularMoviesListMapper @Inject constructor() :
+    Mapper<List<com.practice.data.api.model.Movie>, List<Movie>> {
 
     override fun map(i: List<com.practice.data.api.model.Movie>): List<Movie> {
         return i.map(::mapData)

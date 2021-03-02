@@ -1,6 +1,6 @@
 package com.practice.data.repository
 
-import com.practice.data.source.MovieDataSource
+import com.practice.data.repository.source.MovieDataSource
 
 class MovieRemoteRepository(
     private val dataSource: MovieDataSource
