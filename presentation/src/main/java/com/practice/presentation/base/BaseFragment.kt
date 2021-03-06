@@ -6,8 +6,6 @@ import com.practice.presentation.di.Injector
 
 abstract class BaseFragment : Fragment() {
 
-    abstract val viewModeFactory: ViewModelFactory
-
     override fun onAttach(context: Context) {
         super.onAttach(context)
         (context.applicationContext as Injector)

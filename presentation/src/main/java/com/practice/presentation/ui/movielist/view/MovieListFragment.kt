@@ -14,7 +14,6 @@ import javax.inject.Inject
 
 class MovieListFragment : BaseFragment() {
 
-    @Inject override lateinit var viewModeFactory: ViewModelFactory
     private lateinit var viewModel: MovieListViewModel
 
     private lateinit var binding: FragmentMovieListBinding
