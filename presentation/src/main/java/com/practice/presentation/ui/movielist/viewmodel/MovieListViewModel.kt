@@ -28,4 +28,8 @@ class MovieListViewModel @Inject constructor(
             _popularMovies.postValue(response)
         }
     }
+
+    fun refresh() {
+        page = 1
+    }
 }
