@@ -1,13 +1,17 @@
 package com.practice.myapp.di
 
-import android.app.Application
 import android.content.Context
-import dagger.Binds
+import com.practice.presentation.di.FragmentSubComponent
 import dagger.Module
+import dagger.Provides
+import javax.inject.Singleton
 
-@Module
-abstract class AppModule {
+@Module(subcomponents = [FragmentSubComponent::class])
+class AppModule(private val context: Context) {
 
-    @Binds
-    abstract fun bindContext(application: Application): Context
+    @Singleton
+    @Provides
+    fun provideApplicationContext():Context{
+        return context.applicationContext
+    }
 }

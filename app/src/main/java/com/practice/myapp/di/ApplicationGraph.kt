@@ -1,13 +1,10 @@
 package com.practice.myapp.di
 
-import android.app.Application
 import com.practice.data.di.DataModule
 import com.practice.domain.di.DomainModule
-import com.practice.myapp.BaseApplication
+import com.practice.presentation.di.FragmentSubComponent
 import com.practice.presentation.di.PresentationModule
-import dagger.BindsInstance
 import dagger.Component
-import dagger.android.AndroidInjector
 import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
@@ -21,14 +18,7 @@ import javax.inject.Singleton
         PresentationModule::class
     ]
 )
-interface ApplicationComponent : AndroidInjector<BaseApplication> {
+interface ApplicationComponent {
 
-    @Component.Builder
-    interface Builder {
-        @BindsInstance
-        fun application(application: Application): Builder
-        fun build(): ApplicationComponent
-    }
-
-    override fun inject(application: BaseApplication)
+    fun fragmentSubComponent(): FragmentSubComponent.Factory
 }
