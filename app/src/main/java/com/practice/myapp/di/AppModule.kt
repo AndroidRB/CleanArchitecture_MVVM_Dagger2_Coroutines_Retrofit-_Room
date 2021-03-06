@@ -1,7 +1,7 @@
 package com.practice.myapp.di
 
 import android.content.Context
-import com.practice.presentation.di.FragmentSubComponent
+import com.practice.presentation.di.component.FragmentSubComponent
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton

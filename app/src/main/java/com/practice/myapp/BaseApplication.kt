@@ -3,8 +3,8 @@ package com.practice.myapp
 import android.app.Application
 import com.practice.myapp.di.ApplicationComponent
 import com.practice.myapp.di.DaggerApplicationComponent
-import com.practice.presentation.di.Injector
-import com.practice.presentation.di.FragmentSubComponent
+import com.practice.presentation.di.injector.Injector
+import com.practice.presentation.di.component.FragmentSubComponent
 
 class BaseApplication : Application(), Injector {
 

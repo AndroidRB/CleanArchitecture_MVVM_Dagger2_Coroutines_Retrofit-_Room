@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.Module
 
 @Module
-abstract class RemoteDataSourceModule {
+abstract class DataSourceModule {
 
     @Binds
     abstract fun bindsRemoteDataSourceImpl(dataSourceImpl: MovieRemoteDataSourceImpl): MovieRemoteDataSource

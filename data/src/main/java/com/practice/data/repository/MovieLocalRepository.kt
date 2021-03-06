@@ -1,7 +1,9 @@
 package com.practice.data.repository
 
-class MovieLocalRepository(
+import com.practice.data.repository.source.local.MovieLocalDataSource
 
+class MovieLocalRepository(
+    private val localDataSource: MovieLocalDataSource
 ) {
 
 }

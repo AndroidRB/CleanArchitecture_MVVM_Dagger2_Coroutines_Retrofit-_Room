@@ -2,11 +2,9 @@ package com.practice.myapp.di
 
 import com.practice.data.di.DataModule
 import com.practice.domain.di.DomainModule
-import com.practice.presentation.di.FragmentSubComponent
-import com.practice.presentation.di.PresentationModule
-import com.practice.presentation.di.ViewModelModule
+import com.practice.presentation.di.component.FragmentSubComponent
+import com.practice.presentation.di.module.PresentationModule
 import dagger.Component
-import dagger.android.support.AndroidSupportInjectionModule
 import javax.inject.Singleton
 
 @Singleton
@@ -14,8 +12,8 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         PresentationModule::class,
-        DataModule::class,
-        DomainModule::class
+        DomainModule::class,
+        DataModule::class
     ]
 )
 interface ApplicationComponent {
