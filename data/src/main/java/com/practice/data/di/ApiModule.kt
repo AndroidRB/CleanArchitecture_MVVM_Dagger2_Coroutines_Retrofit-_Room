@@ -18,14 +18,11 @@ private const val TIMEOUT = 10L
 class ApiModule {
 
     @Provides
-    fun providesRetrofitInstance() = Retrofit.Builder()
+    fun providesRetrofitInstance(): Retrofit = Retrofit.Builder()
         .baseUrl(URL)
         .client(getHttpClient())
         .addConverterFactory(GsonConverterFactory.create(GsonBuilder().create()))
         .build()
-
-    @Provides
-    fun providesApiService() = providesRetrofitInstance().create(ApiService::class.java)
 
     private fun getHttpClient(): OkHttpClient {
         val interceptor = HttpLoggingInterceptor()
@@ -40,4 +37,8 @@ class ApiModule {
             .readTimeout(TIMEOUT, TimeUnit.SECONDS)
             .build()
     }
+
+    @Provides
+    fun providesApiService(): ApiService = providesRetrofitInstance().create(ApiService::class.java)
+
 }

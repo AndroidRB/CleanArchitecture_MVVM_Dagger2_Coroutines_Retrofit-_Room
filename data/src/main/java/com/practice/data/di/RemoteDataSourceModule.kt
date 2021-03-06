@@ -1,7 +1,7 @@
 package com.practice.data.di
 
-import com.practice.data.repository.source.MovieRemoteDataSource
-import com.practice.data.repository.source.MovieRemoteDataSourceImpl
+import com.practice.data.repository.source.remote.MovieRemoteDataSource
+import com.practice.data.repository.source.remote.MovieRemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
 
