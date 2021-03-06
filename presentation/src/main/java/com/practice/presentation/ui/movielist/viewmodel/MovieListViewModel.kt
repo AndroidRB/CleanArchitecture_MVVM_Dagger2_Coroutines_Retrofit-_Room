@@ -8,7 +8,7 @@ import com.practice.domain.usecase.GetPopularMoviesUseCase
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
-class MovieListViewModel @Inject constructor (
+class MovieListViewModel @Inject constructor(
     private val getPopularMoviesUseCase: GetPopularMoviesUseCase
 ) : ViewModel() {
 

@@ -33,7 +33,7 @@ class MovieListFragment : BaseFragment() {
     }
 
     private fun initValues() {
-//        viewModel = ViewModelProvider(this, viewModeFactory).get(MovieListViewModel::class.java)
+        viewModel = ViewModelProvider(this, viewModelFactory).get(MovieListViewModel::class.java)
 
 //        adapter = PopularMoviesListAdapter(arrayListOf(), this)
 //        gridLayoutManager = GridLayoutManager(requireContext(), 2)
