@@ -1,4 +1,4 @@
-package com.practice.domain.mapper
+package com.practice.domain.mapper.remote
 
 import com.practice.data.api.model.MovieListResponse
 import com.practice.domain.entity.Movie

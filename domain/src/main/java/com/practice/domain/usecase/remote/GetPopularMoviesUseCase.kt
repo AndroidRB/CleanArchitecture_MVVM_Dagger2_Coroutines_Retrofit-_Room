@@ -1,10 +1,9 @@
-package com.practice.domain.usecase
+package com.practice.domain.usecase.remote
 
 import com.practice.data.repository.MovieRemoteRepository
-import com.practice.domain.mapper.PopularMoviesListMapper
+import com.practice.domain.mapper.remote.PopularMoviesListMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 class GetPopularMoviesUseCase(
     private val repository: MovieRemoteRepository,

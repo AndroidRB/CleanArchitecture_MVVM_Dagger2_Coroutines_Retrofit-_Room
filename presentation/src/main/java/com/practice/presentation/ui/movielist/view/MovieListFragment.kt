@@ -113,6 +113,6 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
     }
 
     override fun onBookmarkIconClick(movie: Movie) {
-
+        viewModel.addMovieIntoDb(movie)
     }
 }
