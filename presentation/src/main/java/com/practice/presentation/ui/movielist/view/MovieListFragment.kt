@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import androidx.core.widget.NestedScrollView
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.GridLayoutManager
@@ -95,7 +96,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
                 val pastVisibleItems = gridLayoutManager.findFirstVisibleItemPosition()
 
                 if ((visibleItemCount + pastVisibleItems) >= totalItemCount) {
-
+                    getPopularMovies()
                 }
             }
         }
@@ -108,6 +109,10 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
     }
 
     override fun onItemClick(movie: Movie) {
+        Toast.makeText(requireContext(), movie.movieTitle, Toast.LENGTH_SHORT).show()
+    }
+
+    override fun onBookmarkIconClick(movie: Movie) {
 
     }
 }

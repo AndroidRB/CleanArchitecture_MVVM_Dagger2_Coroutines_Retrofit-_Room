@@ -4,4 +4,5 @@ import com.practice.domain.entity.Movie
 
 interface OnItemClickListener {
     fun onItemClick(movie: Movie)
+    fun onBookmarkIconClick(movie: Movie)
 }

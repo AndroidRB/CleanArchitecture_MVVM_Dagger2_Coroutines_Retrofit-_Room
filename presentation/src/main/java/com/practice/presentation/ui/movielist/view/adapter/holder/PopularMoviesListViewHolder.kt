@@ -10,12 +10,15 @@ import com.practice.presentation.util.Constants
 class PopularMoviesListViewHolder(private val itemBinding: AdapterPopularMoviesItemBinding) :
     RecyclerView.ViewHolder(itemBinding.root) {
 
-    private var item: Movie? = null
-    private var listener: OnItemClickListener? = null
+    private lateinit var item: Movie
+    private lateinit var listener: OnItemClickListener
 
     init {
         itemBinding.itemParent.setOnClickListener {
-            item?.let { it1 -> listener?.onItemClick(it1) }
+            listener.onItemClick(item)
+        }
+        itemBinding.ivBookmark.setOnClickListener {
+            listener.onBookmarkIconClick(item)
         }
     }
 
