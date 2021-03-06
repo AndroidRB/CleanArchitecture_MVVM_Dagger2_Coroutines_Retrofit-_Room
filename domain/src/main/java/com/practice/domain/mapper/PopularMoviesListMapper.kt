@@ -1,13 +1,14 @@
 package com.practice.domain.mapper
 
+import com.practice.data.api.model.MovieListResponse
 import com.practice.domain.entity.Movie
 import com.practice.domain.mapper.common.Mapper
 
 class PopularMoviesListMapper :
-    Mapper<List<com.practice.data.api.model.Movie>, List<Movie>> {
+    Mapper<MovieListResponse, List<Movie>?> {
 
-    override fun map(i: List<com.practice.data.api.model.Movie>): List<Movie> {
-        return i.map(::mapData)
+    override fun map(i: MovieListResponse): List<Movie>? {
+        return i.movies?.map(::mapData)
     }
 
     private fun mapData(movie: com.practice.data.api.model.Movie) =

@@ -1,6 +1,5 @@
 package com.practice.presentation.di
 
-import com.practice.domain.di.DomainModule
 import dagger.Module
 
 @Module(
@@ -8,5 +7,4 @@ import dagger.Module
         ViewModelModule::class
     ]
 )
-class PresentationModule {
-}
+class PresentationModule

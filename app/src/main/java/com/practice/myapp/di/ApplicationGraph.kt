@@ -21,13 +21,13 @@ import javax.inject.Singleton
         PresentationModule::class
     ]
 )
-interface ApplicationGraph : AndroidInjector<BaseApplication> {
+interface ApplicationComponent : AndroidInjector<BaseApplication> {
 
     @Component.Builder
     interface Builder {
         @BindsInstance
         fun application(application: Application): Builder
-        fun build(): ApplicationGraph
+        fun build(): ApplicationComponent
     }
 
     override fun inject(application: BaseApplication)

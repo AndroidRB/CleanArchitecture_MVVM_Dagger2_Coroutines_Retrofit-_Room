@@ -1,7 +1,7 @@
 package com.practice.data.di
 
 import com.practice.data.repository.MovieRemoteRepository
-import com.practice.data.repository.source.MovieDataSource
+import com.practice.data.repository.source.MovieRemoteDataSource
 import dagger.Module
 import dagger.Provides
 
@@ -9,6 +9,6 @@ import dagger.Provides
 class RepositoryModule {
 
     @Provides
-    fun providesMovieRemoteRepository(dataSource: MovieDataSource) =
-        MovieRemoteRepository(dataSource)
+    fun providesMovieRemoteRepository(remoteDataSource: MovieRemoteDataSource) =
+        MovieRemoteRepository(remoteDataSource)
 }

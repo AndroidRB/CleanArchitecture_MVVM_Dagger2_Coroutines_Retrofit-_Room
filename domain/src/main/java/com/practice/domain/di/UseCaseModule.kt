@@ -1,6 +1,7 @@
 package com.practice.domain.di
 
 import com.practice.data.repository.MovieRemoteRepository
+import com.practice.domain.mapper.PopularMoviesListMapper
 import com.practice.domain.usecase.GetPopularMoviesUseCase
 import dagger.Module
 import dagger.Provides
@@ -9,6 +10,8 @@ import dagger.Provides
 class UseCaseModule {
 
     @Provides
-    fun providesGetPopularMoviesUseCase(repository: MovieRemoteRepository) =
-        GetPopularMoviesUseCase(repository)
+    fun providesGetPopularMoviesUseCase(
+        repository: MovieRemoteRepository,
+        mapper: PopularMoviesListMapper
+    ) = GetPopularMoviesUseCase(repository, mapper)
 }

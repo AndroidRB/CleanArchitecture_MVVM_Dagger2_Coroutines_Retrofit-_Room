@@ -1,9 +1,7 @@
 package com.practice.presentation.base
 
-import android.app.Application
 import android.content.Context
 import androidx.fragment.app.Fragment
-import javax.inject.Inject
 
 abstract class BaseFragment : Fragment() {
 
