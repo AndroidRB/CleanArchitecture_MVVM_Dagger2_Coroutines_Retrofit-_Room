@@ -5,9 +5,10 @@ import dagger.Module
 @Module(
     includes = [
         ApiModule::class,
-        RoomModule::class,
         RepositoryModule::class,
-        DataSourceModule::class
+        RemoteDataSourceModule::class,
+        LocalDataSourceModule::class
+//        RoomModule::class
     ]
 )
 class DataModule

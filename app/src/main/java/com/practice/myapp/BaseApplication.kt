@@ -1,10 +1,11 @@
 package com.practice.myapp
 
 import android.app.Application
+import com.practice.myapp.di.AppModule
 import com.practice.myapp.di.ApplicationComponent
 import com.practice.myapp.di.DaggerApplicationComponent
-import com.practice.presentation.di.injector.Injector
 import com.practice.presentation.di.component.FragmentSubComponent
+import com.practice.presentation.di.injector.Injector
 
 class BaseApplication : Application(), Injector {
 
@@ -12,7 +13,9 @@ class BaseApplication : Application(), Injector {
 
     override fun onCreate() {
         super.onCreate()
-        appComponent = DaggerApplicationComponent.builder().build()
+        appComponent = DaggerApplicationComponent.builder()
+            .appModule(AppModule(applicationContext))
+            .build()
     }
 
     override fun createFragmentSubComponent(): FragmentSubComponent {
