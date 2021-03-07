@@ -6,8 +6,9 @@ import androidx.lifecycle.viewModelScope
 import com.practice.domain.entity.Movie
 import com.practice.domain.usecase.local.GetAllMoviesUseCase
 import kotlinx.coroutines.launch
+import javax.inject.Inject
 
-class BookmarkViewModel(
+class BookmarkViewModel @Inject constructor(
     private val getAllMoviesUseCase: GetAllMoviesUseCase
 ): ViewModel() {
 

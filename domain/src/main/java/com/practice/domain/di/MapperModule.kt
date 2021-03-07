@@ -1,6 +1,7 @@
 package com.practice.domain.di
 
 import com.practice.domain.mapper.local.AddMovieMapper
+import com.practice.domain.mapper.local.GetAllMoviesMapper
 import com.practice.domain.mapper.remote.PopularMoviesListMapper
 import dagger.Module
 import dagger.Provides
@@ -13,4 +14,7 @@ class MapperModule {
 
     @Provides
     fun providesAddMovieMapper() = AddMovieMapper()
+
+    @Provides
+    fun provideGetAllMoviesMapper() = GetAllMoviesMapper()
 }

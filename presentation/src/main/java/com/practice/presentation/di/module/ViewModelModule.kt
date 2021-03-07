@@ -20,9 +20,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MovieListViewModel::class)
     abstract fun bindHomeViewModel(viewModel: MovieListViewModel): ViewModel
-//
-//    @Binds
-//    @IntoMap
-//    @ViewModelKey(BookmarkViewModel::class)
-//    abstract fun bindHomeViewModel(viewModel: BookmarkViewModel): ViewModel
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(BookmarkViewModel::class)
+    abstract fun bindBookmarkViewModel(viewModel: BookmarkViewModel): ViewModel
 }
