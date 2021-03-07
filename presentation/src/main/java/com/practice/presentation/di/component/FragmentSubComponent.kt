@@ -1,7 +1,6 @@
 package com.practice.presentation.di.component
 
 import com.practice.presentation.base.BaseFragment
-import com.practice.presentation.di.module.ViewModelModule
 import dagger.Subcomponent
 
 @Subcomponent
