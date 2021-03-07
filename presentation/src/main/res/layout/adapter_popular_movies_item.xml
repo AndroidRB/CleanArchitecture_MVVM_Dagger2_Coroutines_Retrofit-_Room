@@ -36,6 +36,16 @@
                 android:layout_gravity="top|end"
                 android:padding="@dimen/padding_normal"
                 android:src="@drawable/ic_baseline_bookmark" />
+
+            <ImageView
+                android:id="@+id/ivRemove"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top|end"
+                android:scaleType="centerCrop"
+                android:padding="@dimen/padding_normal"
+                android:src="@drawable/ic_baseline_close"
+                android:visibility="gone"/>
         </FrameLayout>
 
         <TextView

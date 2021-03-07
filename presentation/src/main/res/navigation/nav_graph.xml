@@ -9,7 +9,7 @@
         android:id="@+id/navigation_home"
         android:name="com.practice.presentation.ui.movielist.view.MovieListFragment"
         android:label="@string/title_home"
-        tools:layout="@layout/fragment_movie_list" >
+        tools:layout="@layout/fragment_movie_list">
         <action
             android:id="@+id/action_navigation_home_to_detailsFragment"
             app:destination="@id/detailsFragment" />
@@ -24,6 +24,12 @@
     <fragment
         android:id="@+id/detailsFragment"
         android:name="com.practice.presentation.ui.moviedetails.view.DetailsFragment"
-        android:label="DetailsFragment" >
-    </fragment>
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details" />
+
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.practice.presentation.ui.settings.view.SettingsFragment"
+        android:label="@string/title_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>

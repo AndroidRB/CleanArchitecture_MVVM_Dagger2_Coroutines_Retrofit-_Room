@@ -4,6 +4,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.practice.presentation.base.ViewModelFactory
 import com.practice.presentation.base.ViewModelKey
+import com.practice.presentation.ui.bookmarks.viewmodel.BookmarkViewModel
 import com.practice.presentation.ui.movielist.viewmodel.MovieListViewModel
 import dagger.Binds
 import dagger.Module
@@ -19,4 +20,9 @@ abstract class ViewModelModule {
     @IntoMap
     @ViewModelKey(MovieListViewModel::class)
     abstract fun bindHomeViewModel(viewModel: MovieListViewModel): ViewModel
+//
+//    @Binds
+//    @IntoMap
+//    @ViewModelKey(BookmarkViewModel::class)
+//    abstract fun bindHomeViewModel(viewModel: BookmarkViewModel): ViewModel
 }

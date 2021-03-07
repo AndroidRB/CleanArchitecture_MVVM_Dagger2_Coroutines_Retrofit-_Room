@@ -38,7 +38,9 @@ class PopularMoviesListAdapter(
     }
 
     fun setData(mDataSet: List<Movie>?) {
-        this.mDataSet.addAll(mDataSet!!)
+        if (mDataSet != null) {
+            this.mDataSet.addAll(mDataSet)
+        }
         notifyDataSetChanged()
     }
 
