@@ -8,4 +8,6 @@ class MovieLocalRepository (
     private val localDataSource: MovieLocalDataSource
 ) {
     suspend fun addMovie(movie: MovieEntity) = localDataSource.insertMovie(movie)
+
+    suspend fun getAllMovies() = localDataSource.getAllMovies()
 }
