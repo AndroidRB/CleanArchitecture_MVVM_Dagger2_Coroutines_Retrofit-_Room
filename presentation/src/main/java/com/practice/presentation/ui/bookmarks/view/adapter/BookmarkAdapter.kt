@@ -35,4 +35,9 @@ private val listener: OnItemClickListener
         }
         notifyDataSetChanged()
     }
+
+    fun clearData() {
+        mDataSet.clear()
+        notifyDataSetChanged()
+    }
 }

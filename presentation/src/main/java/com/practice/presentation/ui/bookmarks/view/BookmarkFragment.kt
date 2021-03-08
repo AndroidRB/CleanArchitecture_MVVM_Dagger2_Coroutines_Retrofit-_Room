@@ -27,6 +27,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
         binding = this
         initValues()
         initObservers()
+        initListeners()
     }.root
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,11 +43,18 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
 
     private fun initObservers() {
         viewModel.isLoading.observe(viewLifecycleOwner, {
-            binding.progressBar.visibility = if (it) View.VISIBLE else View.GONE
+            binding.swipeRefreshLayout.isRefreshing = it
         })
         viewModel.moviesFromDb.observe(viewLifecycleOwner, {
             setMovies(it)
         })
+    }
+
+    private fun initListeners() {
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            adapter.clearData()
+            getMovies()
+        }
     }
 
     private fun getMovies() {
@@ -69,6 +77,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
     }
 
     override fun onRemoveIconClick(movie: Movie) {
-
+        adapter.clearData()
+        viewModel.removeMovieFromDb(movie.movieId.toLong())
     }
 }

@@ -10,4 +10,6 @@ class MovieLocalRepository (
     suspend fun addMovie(movie: MovieEntity) = localDataSource.insertMovie(movie)
 
     suspend fun getAllMovies() = localDataSource.getAllMovies()
+
+    suspend fun removeMovie(movieId: Long) = localDataSource.deleteMovie(movieId)
 }
