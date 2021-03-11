@@ -47,6 +47,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
             binding.swipeRefreshLayout.isRefreshing = it
         })
         viewModel.moviesFromDb.observe(viewLifecycleOwner, {
+            adapter.clearData()
             setMovies(it)
         })
     }
