@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.practice.domain.entity.Movie
 import com.practice.presentation.base.BaseFragment
@@ -73,7 +74,11 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
 
 
     override fun onItemClick(movie: Movie) {
-
+        findNavController().navigate(
+            BookmarkFragmentDirections.actionNavigationBookmarkToDetailsFragment(
+                movie
+            )
+        )
     }
 
     override fun onRemoveIconClick(movie: Movie) {

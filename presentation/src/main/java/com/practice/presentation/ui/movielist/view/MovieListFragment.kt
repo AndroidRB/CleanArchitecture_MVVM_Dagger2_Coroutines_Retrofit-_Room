@@ -4,9 +4,9 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.core.widget.NestedScrollView
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.practice.domain.entity.Movie
@@ -109,7 +109,11 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
     }
 
     override fun onItemClick(movie: Movie) {
-        Toast.makeText(requireContext(), movie.movieTitle, Toast.LENGTH_SHORT).show()
+        findNavController().navigate(
+            MovieListFragmentDirections.actionNavigationHomeToDetailsFragment(
+                movie
+            )
+        )
     }
 
     override fun onBookmarkIconClick(movie: Movie) {

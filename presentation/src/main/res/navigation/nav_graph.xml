@@ -19,17 +19,25 @@
         android:id="@+id/navigation_bookmark"
         android:name="com.practice.presentation.ui.bookmarks.view.BookmarkFragment"
         android:label="@string/title_database"
-        tools:layout="@layout/fragment_bookmark" />
-
-    <fragment
-        android:id="@+id/detailsFragment"
-        android:name="com.practice.presentation.ui.moviedetails.view.DetailsFragment"
-        android:label="DetailsFragment"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_bookmark" >
+        <action
+            android:id="@+id/action_navigation_bookmark_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+    </fragment>
 
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.practice.presentation.ui.settings.view.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
+
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.practice.presentation.ui.moviedetails.DetailsFragment"
+        android:label="DetailsFragment"
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="movieItem"
+            app:argType="com.practice.domain.entity.Movie" />
+    </fragment>
 </navigation>
