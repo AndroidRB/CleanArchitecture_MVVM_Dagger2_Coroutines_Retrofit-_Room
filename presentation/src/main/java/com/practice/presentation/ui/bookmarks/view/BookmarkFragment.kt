@@ -16,7 +16,9 @@ import com.practice.presentation.ui.bookmarks.viewmodel.BookmarkViewModel
 
 class BookmarkFragment : BaseFragment(), OnItemClickListener {
 
-    private lateinit var binding: FragmentBookmarkBinding
+    private var _binding: FragmentBookmarkBinding? = null
+    private val binding get() = _binding
+
     private lateinit var viewModel: BookmarkViewModel
     private lateinit var adapter: BookmarkAdapter
 
@@ -25,7 +27,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) = FragmentBookmarkBinding.inflate(inflater, container, false).apply {
-        binding = this
+        _binding = this
         initValues()
         initObservers()
         initListeners()
@@ -37,14 +39,14 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
 
     private fun initValues() {
         viewModel = ViewModelProvider(this, viewModelFactory).get(BookmarkViewModel::class.java)
-        binding.rvContainer.layoutManager = LinearLayoutManager(requireContext())
+        binding?.rvContainer?.layoutManager = LinearLayoutManager(requireContext())
         adapter = BookmarkAdapter(mutableListOf(), this)
-        binding.rvContainer.adapter = adapter
+        binding?.rvContainer?.adapter = adapter
     }
 
     private fun initObservers() {
         viewModel.isLoading.observe(viewLifecycleOwner, {
-            binding.swipeRefreshLayout.isRefreshing = it
+            binding?.swipeRefreshLayout?.isRefreshing = it
         })
         viewModel.moviesFromDb.observe(viewLifecycleOwner, {
             adapter.clearData()
@@ -53,7 +55,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
     }
 
     private fun initListeners() {
-        binding.swipeRefreshLayout.setOnRefreshListener {
+        binding?.swipeRefreshLayout?.setOnRefreshListener {
             adapter.clearData()
             getMovies()
         }
@@ -69,8 +71,8 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
     }
 
     private fun setEmptyState(isEmpty: Boolean) {
-        binding.rvContainer.visibility = if (isEmpty) View.GONE else View.VISIBLE
-        binding.tvEmptyState.visibility = if (isEmpty) View.VISIBLE else View.GONE
+        binding?.rvContainer?.visibility = if (isEmpty) View.GONE else View.VISIBLE
+        binding?.tvEmptyState?.visibility = if (isEmpty) View.VISIBLE else View.GONE
     }
 
 
@@ -85,5 +87,10 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
     override fun onRemoveIconClick(movie: Movie) {
         adapter.clearData()
         viewModel.removeMovieFromDb(movie.movieId.toLong())
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }

@@ -12,7 +12,9 @@ import com.practice.presentation.extension.loadImageUrl
 
 class DetailsFragment : BaseFragment() {
 
-    private lateinit var binding: FragmentDetailsBinding
+    private var _binding: FragmentDetailsBinding? = null
+    private val binding get() = _binding
+
     private val navArgs by navArgs<DetailsFragmentArgs>()
     private var movie: Movie? = null
 
@@ -21,7 +23,7 @@ class DetailsFragment : BaseFragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ) = FragmentDetailsBinding.inflate(inflater, container, false).apply {
-        binding = this
+        _binding = this
         initValues()
         initUI()
         initListeners()
@@ -32,13 +34,18 @@ class DetailsFragment : BaseFragment() {
     }
 
     private fun initUI() {
-        binding.tvTitle.text = movie?.movieTitle ?: ""
-        binding.ivBg.loadImageUrl(movie?.moviePosterUrl ?: "")
+        binding?.tvTitle?.text = movie?.movieTitle ?: ""
+        binding?.ivBg?.loadImageUrl(movie?.moviePosterUrl ?: "")
     }
 
     private fun initListeners() {
-        binding.ivBack.setOnClickListener {
+        binding?.ivBack?.setOnClickListener {
             findNavController().popBackStack()
         }
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
     }
 }
