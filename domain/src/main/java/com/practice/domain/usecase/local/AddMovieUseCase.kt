@@ -10,7 +10,5 @@ class AddMovieUseCase(
     private val repository: MovieLocalRepository,
     private val mapper: AddMovieMapper
 ) {
-    suspend operator fun invoke(movie: Movie) = withContext(Dispatchers.IO) {
-        return@withContext repository.addMovie(mapper.map(movie))
-    }
+    suspend operator fun invoke(movie: Movie) = repository.addMovie(mapper.map(movie))
 }

@@ -10,7 +10,5 @@ class GetAllMoviesUseCase(
     private val repository: MovieLocalRepository,
     private val mapper: GetAllMoviesMapper
 ) {
-    suspend operator fun invoke(): List<Movie> = withContext(Dispatchers.IO) {
-        return@withContext mapper.map(repository.getAllMovies())
-    }
+    suspend operator fun invoke(): List<Movie> = mapper.map(repository.getAllMovies())
 }

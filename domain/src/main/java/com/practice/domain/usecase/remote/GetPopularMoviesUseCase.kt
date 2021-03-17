@@ -9,7 +9,5 @@ class GetPopularMoviesUseCase(
     private val repository: MovieRemoteRepository,
     private val popularMoviesListMapper: PopularMoviesListMapper
 ) {
-    suspend operator fun invoke(page: Int) = withContext(Dispatchers.IO) {
-       return@withContext popularMoviesListMapper.map(repository.getPopularMovies(page))
-    }
+    suspend operator fun invoke(page: Int) = popularMoviesListMapper.map(repository.getPopularMovies(page))
 }
