@@ -1,8 +1,8 @@
 package com.practice.presentation.ui.movielist.view.adapter.listener
 
-import com.practice.domain.entity.Movie
+import com.practice.domain.usecase.data.MovieItem
 
 interface OnItemClickListener {
-    fun onItemClick(movie: Movie)
-    fun onBookmarkIconClick(movie: Movie)
+    fun onItemClick(movieItem: MovieItem)
+    fun onBookmarkIconClick(movieItem: MovieItem)
 }

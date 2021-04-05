@@ -1,9 +1,14 @@
 package com.practice.data.repository
 
-import com.practice.data.repository.source.remote.MovieRemoteDataSource
+import com.practice.data.repository.mapper.remote.PopularMoviesListMapper
+import com.practice.data.repository.source.remote.IMovieRemoteDataSource
+import com.practice.domain.repository.IMovieRemoteRepository
 
 class MovieRemoteRepository(
-    private val remoteDataSource: MovieRemoteDataSource
-) {
-    suspend fun getPopularMovies(page: Int) = remoteDataSource.getPopularMovies(page)
+    private val remoteDataSource: IMovieRemoteDataSource,
+    private val popularMoviesListMapper: PopularMoviesListMapper
+) : IMovieRemoteRepository {
+
+    override suspend fun getPopularMovies(page: Int) =
+        popularMoviesListMapper.map(remoteDataSource.getPopularMovies(page))
 }

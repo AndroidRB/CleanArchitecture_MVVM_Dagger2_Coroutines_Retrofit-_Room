@@ -2,7 +2,7 @@ package com.practice.presentation.ui.movielist.view.adapter.holder
 
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.practice.domain.entity.Movie
+import com.practice.domain.usecase.data.MovieItem
 import com.practice.presentation.databinding.AdapterPopularMoviesItemBinding
 import com.practice.presentation.ui.movielist.view.adapter.listener.OnItemClickListener
 import com.practice.presentation.util.Constants
@@ -10,7 +10,7 @@ import com.practice.presentation.util.Constants
 class PopularMoviesListViewHolder(private val itemBinding: AdapterPopularMoviesItemBinding) :
     RecyclerView.ViewHolder(itemBinding.root) {
 
-    private lateinit var item: Movie
+    private lateinit var item: MovieItem
     private lateinit var listener: OnItemClickListener
 
     init {
@@ -22,7 +22,7 @@ class PopularMoviesListViewHolder(private val itemBinding: AdapterPopularMoviesI
         }
     }
 
-    fun bind(item: Movie, listener: OnItemClickListener) {
+    fun bind(item: MovieItem, listener: OnItemClickListener) {
         this.item = item
         this.listener = listener
 

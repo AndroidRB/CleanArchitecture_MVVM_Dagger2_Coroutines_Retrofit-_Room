@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.practice.domain.entity.Movie
+import com.practice.domain.usecase.data.MovieItem
 import com.practice.presentation.base.BaseFragment
 import com.practice.presentation.databinding.FragmentBookmarkBinding
 import com.practice.presentation.ui.bookmarks.view.adapter.BookmarkAdapter
@@ -65,8 +65,8 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
         viewModel.getPopularMoviesFromDb()
     }
 
-    private fun setMovies(movies: List<Movie>) {
-        adapter.setData(movies)
+    private fun setMovies(movieItems: List<MovieItem>) {
+        adapter.setData(movieItems)
         setEmptyState(adapter.itemCount == 0)
     }
 
@@ -76,17 +76,17 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
     }
 
 
-    override fun onItemClick(movie: Movie) {
+    override fun onItemClick(movieItem: MovieItem) {
         findNavController().navigate(
             BookmarkFragmentDirections.actionNavigationBookmarkToDetailsFragment(
-                movie
+                movieItem
             )
         )
     }
 
-    override fun onRemoveIconClick(movie: Movie) {
+    override fun onRemoveIconClick(movieItem: MovieItem) {
         adapter.clearData()
-        viewModel.removeMovieFromDb(movie.movieId.toLong())
+        viewModel.removeMovieFromDb(movieItem.movieId.toLong())
     }
 
     override fun onDestroyView() {

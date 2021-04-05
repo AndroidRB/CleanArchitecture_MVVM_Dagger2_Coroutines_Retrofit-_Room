@@ -1,11 +1,9 @@
 package com.practice.domain.usecase.local
 
-import com.practice.data.repository.MovieLocalRepository
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.practice.domain.repository.IMovieLocalRepository
 
 class RemoveMovieUseCase(
-    private val repository: MovieLocalRepository
+    private val repository: IMovieLocalRepository
 ) {
-    suspend operator fun invoke(movieId: Long) =  repository.removeMovie(movieId)
+    suspend operator fun invoke(movieId: Long) =  repository.deleteMovie(movieId)
 }

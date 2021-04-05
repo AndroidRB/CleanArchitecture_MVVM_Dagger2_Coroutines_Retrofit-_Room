@@ -5,7 +5,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.practice.domain.entity.Movie
+import com.practice.domain.usecase.data.MovieItem
 import com.practice.presentation.base.BaseFragment
 import com.practice.presentation.databinding.FragmentDetailsBinding
 import com.practice.presentation.extension.loadImageUrl
@@ -16,7 +16,7 @@ class DetailsFragment : BaseFragment() {
     private val binding get() = _binding
 
     private val navArgs by navArgs<DetailsFragmentArgs>()
-    private var movie: Movie? = null
+    private var movieItem: MovieItem? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,12 +30,12 @@ class DetailsFragment : BaseFragment() {
     }.root
 
     private fun initValues() {
-        movie = navArgs.movieItem
+        movieItem = navArgs.movieItem
     }
 
     private fun initUI() {
-        binding?.tvTitle?.text = movie?.movieTitle ?: ""
-        binding?.ivBg?.loadImageUrl(movie?.moviePosterUrl ?: "")
+        binding?.tvTitle?.text = movieItem?.movieTitle ?: ""
+        binding?.ivBg?.loadImageUrl(movieItem?.moviePosterUrl ?: "")
     }
 
     private fun initListeners() {

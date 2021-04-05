@@ -9,7 +9,7 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.practice.domain.entity.Movie
+import com.practice.domain.usecase.data.MovieItem
 import com.practice.presentation.base.BaseFragment
 import com.practice.presentation.databinding.FragmentMovieListBinding
 import com.practice.presentation.ui.movielist.view.adapter.PopularMoviesListAdapter
@@ -63,8 +63,8 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         viewModel.getPopularMovies()
     }
 
-    private fun setPopularMovies(movies: List<Movie>) {
-        adapter.setData(movies)
+    private fun setPopularMovies(movieItems: List<MovieItem>) {
+        adapter.setData(movieItems)
         setEmptyState(adapter.itemCount == 0)
     }
 
@@ -110,16 +110,16 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         getPopularMovies()
     }
 
-    override fun onItemClick(movie: Movie) {
+    override fun onItemClick(movieItem: MovieItem) {
         findNavController().navigate(
             MovieListFragmentDirections.actionNavigationHomeToDetailsFragment(
-                movie
+                movieItem
             )
         )
     }
 
-    override fun onBookmarkIconClick(movie: Movie) {
-        viewModel.addMovieIntoDb(movie)
+    override fun onBookmarkIconClick(movieItem: MovieItem) {
+        viewModel.addMovieIntoDb(movieItem)
     }
 
     override fun onDestroyView() {

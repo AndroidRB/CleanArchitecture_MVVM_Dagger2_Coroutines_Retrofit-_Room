@@ -3,14 +3,14 @@ package com.practice.presentation.ui.bookmarks.view.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.practice.domain.entity.Movie
+import com.practice.domain.usecase.data.MovieItem
 import com.practice.presentation.databinding.AdapterPopularMoviesItemBinding
 import com.practice.presentation.ui.bookmarks.view.adapter.holder.BookmarkViewHolder
 import com.practice.presentation.ui.bookmarks.view.adapter.listener.OnItemClickListener
 
 class BookmarkAdapter(
-private val mDataSet: MutableList<Movie>,
-private val listener: OnItemClickListener
+    private val mDataSet: MutableList<MovieItem>,
+    private val listener: OnItemClickListener
 ) : RecyclerView.Adapter<BookmarkViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookmarkViewHolder {
@@ -29,7 +29,7 @@ private val listener: OnItemClickListener
 
     override fun getItemCount() = mDataSet.size
 
-    fun setData(mDataSet: List<Movie>?) {
+    fun setData(mDataSet: List<MovieItem>?) {
         if (mDataSet != null) {
             this.mDataSet.addAll(mDataSet)
         }

@@ -7,7 +7,8 @@ import dagger.Module
         ApiModule::class,
         RepositoryModule::class,
         RemoteDataSourceModule::class,
-        LocalDataSourceModule::class
+        LocalDataSourceModule::class,
+        MapperModule::class,
 //        RoomModule::class
     ]
 )

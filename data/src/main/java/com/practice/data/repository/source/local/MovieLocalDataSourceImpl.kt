@@ -5,11 +5,10 @@ import com.practice.data.db.MovieDatabase
 import com.practice.data.db.entity.MovieEntity
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
-import javax.inject.Inject
 
 class MovieLocalDataSourceImpl (
     context: Context
-) : MovieLocalDataSource {
+) : IMovieLocalDataSource {
 
     private val dao = MovieDatabase.getInstance(context).getDao()
 

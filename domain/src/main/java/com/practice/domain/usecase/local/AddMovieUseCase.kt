@@ -1,14 +1,10 @@
 package com.practice.domain.usecase.local
 
-import com.practice.data.repository.MovieLocalRepository
-import com.practice.domain.entity.Movie
-import com.practice.domain.mapper.local.AddMovieMapper
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.practice.domain.usecase.data.MovieItem
+import com.practice.domain.repository.IMovieLocalRepository
 
 class AddMovieUseCase(
-    private val repository: MovieLocalRepository,
-    private val mapper: AddMovieMapper
+    private val repository: IMovieLocalRepository
 ) {
-    suspend operator fun invoke(movie: Movie) = repository.addMovie(mapper.map(movie))
+    suspend operator fun invoke(movieItem: MovieItem) = repository.insertMovie(movieItem)
 }

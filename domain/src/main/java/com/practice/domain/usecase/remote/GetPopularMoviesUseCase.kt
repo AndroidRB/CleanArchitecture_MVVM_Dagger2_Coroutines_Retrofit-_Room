@@ -1,13 +1,9 @@
 package com.practice.domain.usecase.remote
 
-import com.practice.data.repository.MovieRemoteRepository
-import com.practice.domain.mapper.remote.PopularMoviesListMapper
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.withContext
+import com.practice.domain.repository.IMovieRemoteRepository
 
 class GetPopularMoviesUseCase(
-    private val repository: MovieRemoteRepository,
-    private val popularMoviesListMapper: PopularMoviesListMapper
+    private val repository: IMovieRemoteRepository
 ) {
-    suspend operator fun invoke(page: Int) = popularMoviesListMapper.map(repository.getPopularMovies(page))
+    suspend operator fun invoke(page: Int) = repository.getPopularMovies(page)
 }

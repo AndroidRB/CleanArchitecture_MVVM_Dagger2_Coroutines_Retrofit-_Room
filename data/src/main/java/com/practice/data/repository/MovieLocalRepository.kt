@@ -1,15 +1,19 @@
 package com.practice.data.repository
 
-import com.practice.data.db.entity.MovieEntity
-import com.practice.data.repository.source.local.MovieLocalDataSource
-import javax.inject.Inject
+import com.practice.data.repository.mapper.local.AddMovieMapper
+import com.practice.data.repository.mapper.local.GetAllMoviesMapper
+import com.practice.data.repository.source.local.IMovieLocalDataSource
+import com.practice.domain.usecase.data.MovieItem
+import com.practice.domain.repository.IMovieLocalRepository
 
-class MovieLocalRepository (
-    private val localDataSource: MovieLocalDataSource
-) {
-    suspend fun addMovie(movie: MovieEntity) = localDataSource.insertMovie(movie)
+class MovieLocalRepository(
+    private val localDataSource: IMovieLocalDataSource,
+    private val addMovieMapper: AddMovieMapper,
+    private val getAllMoviesMapper: GetAllMoviesMapper
+) : IMovieLocalRepository{
+    override suspend fun insertMovie(movieItem: MovieItem) = localDataSource.insertMovie(addMovieMapper.map(movieItem))
 
-    suspend fun getAllMovies() = localDataSource.getAllMovies()
+    override suspend fun getAllMovies() = getAllMoviesMapper.map(localDataSource.getAllMovies())
 
-    suspend fun removeMovie(movieId: Long) = localDataSource.deleteMovie(movieId)
+    override suspend fun deleteMovie(movieId: Long) = localDataSource.deleteMovie(movieId)
 }

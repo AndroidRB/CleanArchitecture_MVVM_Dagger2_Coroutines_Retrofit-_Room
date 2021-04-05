@@ -9,7 +9,7 @@ const val API_KEY = "fbae83def54b1c6503519cd26f55b807"
 
 class MovieRemoteDataSourceImpl @Inject constructor(
     private val service: ApiService
-) : MovieRemoteDataSource {
+) : IMovieRemoteDataSource {
 
     override suspend fun getPopularMovies(page: Int) = withContext(Dispatchers.IO) {
         return@withContext service.getPopularMovies(API_KEY, page)

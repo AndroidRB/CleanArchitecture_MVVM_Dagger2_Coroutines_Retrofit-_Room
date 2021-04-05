@@ -4,7 +4,6 @@ import dagger.Module
 
 @Module(
     includes = [
-        MapperModule::class,
         UseCaseModule::class
     ]
 )

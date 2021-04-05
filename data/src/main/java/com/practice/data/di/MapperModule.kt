@@ -1,8 +1,8 @@
-package com.practice.domain.di
+package com.practice.data.di
 
-import com.practice.domain.mapper.local.AddMovieMapper
-import com.practice.domain.mapper.local.GetAllMoviesMapper
-import com.practice.domain.mapper.remote.PopularMoviesListMapper
+import com.practice.data.repository.mapper.local.AddMovieMapper
+import com.practice.data.repository.mapper.local.GetAllMoviesMapper
+import com.practice.data.repository.mapper.remote.PopularMoviesListMapper
 import dagger.Module
 import dagger.Provides
 

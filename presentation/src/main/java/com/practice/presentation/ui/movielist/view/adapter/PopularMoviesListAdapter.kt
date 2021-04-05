@@ -3,13 +3,13 @@ package com.practice.presentation.ui.movielist.view.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.practice.domain.entity.Movie
+import com.practice.domain.usecase.data.MovieItem
 import com.practice.presentation.databinding.AdapterPopularMoviesItemBinding
 import com.practice.presentation.ui.movielist.view.adapter.holder.PopularMoviesListViewHolder
 import com.practice.presentation.ui.movielist.view.adapter.listener.OnItemClickListener
 
 class PopularMoviesListAdapter(
-    private val mDataSet: MutableList<Movie>,
+    private val mDataSet: MutableList<MovieItem>,
     private val listener: OnItemClickListener
 ) : RecyclerView.Adapter<PopularMoviesListViewHolder>() {
 
@@ -37,7 +37,7 @@ class PopularMoviesListAdapter(
         return mDataSet.size
     }
 
-    fun setData(mDataSet: List<Movie>?) {
+    fun setData(mDataSet: List<MovieItem>?) {
         if (mDataSet != null) {
             this.mDataSet.addAll(mDataSet)
         }
