@@ -1,4 +1,4 @@
-package com.practice.data.repository.source.remote
+package com.practice.data.datasource.remote
 
 import com.practice.data.api.model.MovieListResponse
 

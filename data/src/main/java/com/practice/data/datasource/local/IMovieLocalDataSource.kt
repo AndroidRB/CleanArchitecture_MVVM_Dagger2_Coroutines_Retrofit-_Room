@@ -1,4 +1,4 @@
-package com.practice.data.repository.source.local
+package com.practice.data.datasource.local
 
 import com.practice.data.db.entity.MovieEntity
 

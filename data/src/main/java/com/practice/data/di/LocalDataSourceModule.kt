@@ -1,8 +1,8 @@
 package com.practice.data.di
 
 import com.practice.data.db.dao.MovieDao
-import com.practice.data.repository.source.local.IMovieLocalDataSource
-import com.practice.data.repository.source.local.MovieLocalDataSourceImpl
+import com.practice.data.datasource.local.IMovieLocalDataSource
+import com.practice.data.datasource.local.MovieLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
 import javax.inject.Singleton
