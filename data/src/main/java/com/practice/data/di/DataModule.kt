@@ -9,7 +9,7 @@ import dagger.Module
         RemoteDataSourceModule::class,
         LocalDataSourceModule::class,
         MapperModule::class,
-//        RoomModule::class
+        RoomModule::class
     ]
 )
 class DataModule

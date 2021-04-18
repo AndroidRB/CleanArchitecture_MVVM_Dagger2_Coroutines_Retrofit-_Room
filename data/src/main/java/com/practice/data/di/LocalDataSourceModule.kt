@@ -1,6 +1,6 @@
 package com.practice.data.di
 
-import android.content.Context
+import com.practice.data.db.dao.MovieDao
 import com.practice.data.repository.source.local.IMovieLocalDataSource
 import com.practice.data.repository.source.local.MovieLocalDataSourceImpl
 import dagger.Module
@@ -12,7 +12,7 @@ class LocalDataSourceModule {
 
     @Singleton
     @Provides
-    fun provideLocalDataSource(context: Context): IMovieLocalDataSource {
-        return MovieLocalDataSourceImpl(context)
+    fun provideLocalDataSource(dao: MovieDao): IMovieLocalDataSource {
+        return MovieLocalDataSourceImpl(dao)
     }
 }
