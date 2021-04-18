@@ -1,4 +1,4 @@
-package com.practice.presentation.di.module
+package com.practice.presentation.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
