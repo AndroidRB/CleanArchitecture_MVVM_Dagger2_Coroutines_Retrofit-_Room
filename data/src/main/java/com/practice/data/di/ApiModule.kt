@@ -5,6 +5,8 @@ import com.practice.data.BuildConfig
 import com.practice.data.api.ApiService
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
@@ -15,6 +17,7 @@ private const val URL = "http://api.themoviedb.org/3/"
 private const val TIMEOUT = 10L
 
 @Module
+@InstallIn(SingletonComponent::class)
 class ApiModule {
 
     @Provides

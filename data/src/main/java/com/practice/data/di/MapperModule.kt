@@ -5,8 +5,11 @@ import com.practice.data.repository.mapper.local.GetAllMoviesMapper
 import com.practice.data.repository.mapper.remote.PopularMoviesListMapper
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 @Module
+@InstallIn(SingletonComponent::class)
 class MapperModule {
 
     @Provides

@@ -8,8 +8,11 @@ import com.practice.domain.usecase.local.RemoveMovieUseCase
 import com.practice.domain.usecase.remote.GetPopularMoviesUseCase
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 
 @Module
+@InstallIn(SingletonComponent::class)
 class UseCaseModule {
 
     @Provides

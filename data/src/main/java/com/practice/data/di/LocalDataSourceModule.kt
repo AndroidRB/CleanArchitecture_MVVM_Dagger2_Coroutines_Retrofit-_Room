@@ -5,9 +5,12 @@ import com.practice.data.datasource.local.IMovieLocalDataSource
 import com.practice.data.datasource.local.MovieLocalDataSourceImpl
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
+@InstallIn(SingletonComponent::class)
 class LocalDataSourceModule {
 
     @Singleton
