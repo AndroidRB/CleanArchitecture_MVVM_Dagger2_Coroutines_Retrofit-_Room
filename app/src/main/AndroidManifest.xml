@@ -15,7 +15,12 @@
         android:theme="@style/Theme.MyApp"
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute" >
+        <activity android:name=".ui.navigation.BottomNavigationActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
-
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
     </application>
 </manifest>
