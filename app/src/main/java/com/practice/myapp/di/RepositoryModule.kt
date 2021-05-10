@@ -5,8 +5,8 @@ import com.practice.data.repository.MovieRemoteRepository
 import com.practice.data.repository.mapper.local.AddMovieMapper
 import com.practice.data.repository.mapper.local.GetAllMoviesMapper
 import com.practice.data.repository.mapper.remote.PopularMoviesListMapper
-import com.practice.data.datasource.local.IMovieLocalDataSource
-import com.practice.data.datasource.remote.IMovieRemoteDataSource
+import com.practice.data.datasource.IMovieLocalDataSource
+import com.practice.data.datasource.IMovieRemoteDataSource
 import com.practice.domain.repository.IMovieLocalRepository
 import com.practice.domain.repository.IMovieRemoteRepository
 import dagger.Module

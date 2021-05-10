@@ -1,10 +1,10 @@
-package com.practice.data.db.dao
+package com.practice.myapp.framework.db.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.practice.data.db.entity.MovieEntity
+import com.practice.myapp.framework.db.entity.MovieEntity
 
 /**
  * Data access object contains operations over databases

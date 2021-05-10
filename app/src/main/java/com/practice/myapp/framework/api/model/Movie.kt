@@ -1,4 +1,4 @@
-package com.practice.data.api.model
+package com.practice.myapp.framework.api.model
 
 import android.os.Parcelable
 import com.google.gson.annotations.Expose

@@ -1,10 +1,14 @@
 package com.practice.data.repository.mapper.local
 
-import com.practice.data.db.entity.MovieEntity
-import com.practice.domain.usecase.data.MovieItem
+import com.practice.data.model.Movie
 import com.practice.data.repository.mapper.common.Mapper
+import com.practice.domain.usecase.data.MovieItem
 
-class AddMovieMapper : Mapper<MovieItem, MovieEntity> {
+class AddMovieMapper : Mapper<MovieItem, Movie> {
 
-    override fun map(i: MovieItem) = MovieEntity(name = i.movieTitle, posterPath = i.moviePosterUrl)
+    override fun map(i: MovieItem) = Movie(
+        movieId = i.movieId,
+        movieTitle = i.movieTitle,
+        moviePosterUrl = i.moviePosterUrl
+    )
 }

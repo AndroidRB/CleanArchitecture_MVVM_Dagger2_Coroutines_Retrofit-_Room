@@ -3,8 +3,7 @@ package com.practice.myapp.di
 import com.practice.data.repository.mapper.local.AddMovieMapper
 import com.practice.data.repository.mapper.local.GetAllMoviesMapper
 import com.practice.data.repository.mapper.remote.PopularMoviesListMapper
-import com.practice.myapp.mapper.MovieItemMapper
-import com.practice.myapp.mapper.MoviesDetailsListMapper
+import com.practice.myapp.mapper.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -28,4 +27,16 @@ class MapperModule {
 
     @Provides
     fun providesMoviesDetailsListMapper() = MoviesDetailsListMapper()
+
+    @Provides
+    fun providesMoviesEntityMapper() = MovieEntityMapper()
+
+    @Provides
+    fun providesMoviesDataMapper() = MovieDataMapper()
+
+    @Provides
+    fun providesMoviesDataListMapper() = MovieDataListMapper()
+
+    @Provides
+    fun providesGetPopularMoviesMapper() = GetPopularMoviesMapper()
 }

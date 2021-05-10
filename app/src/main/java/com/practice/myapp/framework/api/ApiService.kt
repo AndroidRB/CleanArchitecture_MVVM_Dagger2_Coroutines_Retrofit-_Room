@@ -1,7 +1,7 @@
-package com.practice.data.api
+package com.practice.myapp.framework.api
 
-import com.practice.data.api.model.Movie
-import com.practice.data.api.model.MovieListResponse
+import com.practice.myapp.framework.api.model.Movie
+import com.practice.myapp.framework.api.model.MovieListResponse
 import retrofit2.http.GET
 import retrofit2.http.Path
 import retrofit2.http.Query

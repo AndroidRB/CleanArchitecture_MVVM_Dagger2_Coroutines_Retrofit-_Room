@@ -1,7 +1,7 @@
 package com.practice.myapp.di
 
-import com.practice.data.datasource.remote.IMovieRemoteDataSource
-import com.practice.data.datasource.remote.MovieRemoteDataSourceImpl
+import com.practice.data.datasource.IMovieRemoteDataSource
+import com.practice.myapp.framework.api.MovieRemoteDataSourceImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
