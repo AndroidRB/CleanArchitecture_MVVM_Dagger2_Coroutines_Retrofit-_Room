@@ -1,4 +1,4 @@
-package com.practice.data.di
+package com.practice.myapp.di
 
 import com.google.gson.GsonBuilder
 import com.practice.data.BuildConfig

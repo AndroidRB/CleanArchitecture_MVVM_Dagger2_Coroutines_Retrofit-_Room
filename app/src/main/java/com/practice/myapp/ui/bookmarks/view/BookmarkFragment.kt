@@ -13,6 +13,7 @@ import com.practice.myapp.databinding.FragmentBookmarkBinding
 import com.practice.myapp.ui.bookmarks.view.adapter.BookmarkAdapter
 import com.practice.myapp.ui.bookmarks.view.adapter.listener.OnItemClickListener
 import com.practice.myapp.ui.bookmarks.viewmodel.BookmarkViewModel
+import com.practice.myapp.mapper.model.MovieDetailsItem
 
 class BookmarkFragment : BaseFragment(), OnItemClickListener {
 
@@ -65,7 +66,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
         viewModel.getPopularMoviesFromDb()
     }
 
-    private fun setMovies(movieItems: List<MovieItem>) {
+    private fun setMovies(movieItems: List<MovieDetailsItem>) {
         adapter.setData(movieItems)
         setEmptyState(adapter.itemCount == 0)
     }
@@ -76,7 +77,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
     }
 
 
-    override fun onItemClick(movieItem: MovieItem) {
+    override fun onItemClick(movieItem: MovieDetailsItem) {
         findNavController().navigate(
             BookmarkFragmentDirections.actionNavigationBookmarkToDetailsFragment(
                 movieItem
@@ -84,7 +85,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
         )
     }
 
-    override fun onRemoveIconClick(movieItem: MovieItem) {
+    override fun onRemoveIconClick(movieItem: MovieDetailsItem) {
         adapter.clearData()
         viewModel.removeMovieFromDb(movieItem.movieId.toLong())
     }

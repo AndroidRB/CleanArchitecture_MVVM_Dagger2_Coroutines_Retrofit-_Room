@@ -38,6 +38,6 @@
         tools:layout="@layout/fragment_details" >
         <argument
             android:name="movieItem"
-            app:argType="com.practice.domain.usecase.data.MovieItem" />
+            app:argType="com.practice.myapp.mapper.model.MovieDetailsItem" />
     </fragment>
 </navigation>

@@ -5,10 +5,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
-import com.practice.domain.usecase.data.MovieItem
 import com.practice.myapp.base.BaseFragment
 import com.practice.myapp.databinding.FragmentDetailsBinding
 import com.practice.myapp.extension.loadImageUrl
+import com.practice.myapp.mapper.model.MovieDetailsItem
 
 class DetailsFragment : BaseFragment() {
 
@@ -16,7 +16,7 @@ class DetailsFragment : BaseFragment() {
     private val binding get() = _binding
 
     private val navArgs by navArgs<DetailsFragmentArgs>()
-    private var movieItem: MovieItem? = null
+    private var movieItem: MovieDetailsItem? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,

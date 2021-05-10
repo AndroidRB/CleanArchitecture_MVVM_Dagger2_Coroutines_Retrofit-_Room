@@ -6,15 +6,20 @@ import androidx.lifecycle.viewModelScope
 import com.practice.domain.usecase.data.MovieItem
 import com.practice.domain.usecase.local.AddMovieUseCase
 import com.practice.domain.usecase.remote.GetPopularMoviesUseCase
+import com.practice.myapp.mapper.MovieItemMapper
+import com.practice.myapp.mapper.MoviesDetailsListMapper
+import com.practice.myapp.mapper.model.MovieDetailsItem
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class MovieListViewModel @Inject constructor(
     private val getPopularMoviesUseCase: GetPopularMoviesUseCase,
-    private val addMovieUseCase: AddMovieUseCase
+    private val addMovieUseCase: AddMovieUseCase,
+    private val movieItemMapper: MovieItemMapper,
+    private val moviesDetailsListMapper: MoviesDetailsListMapper
 ) : ViewModel() {
 
-    private var _popularMovies = MutableLiveData<List<MovieItem>>()
+    private var _popularMovies = MutableLiveData<List<MovieDetailsItem>>()
     val popularMovies = _popularMovies
 
     private var _isLoading = MutableLiveData<Boolean>()
@@ -25,7 +30,7 @@ class MovieListViewModel @Inject constructor(
     fun getPopularMovies() {
         viewModelScope.launch {
             _isLoading.postValue(true)
-            val response = getPopularMoviesUseCase(page++)
+            val response = getPopularMoviesUseCase(page++)?.let { moviesDetailsListMapper.map(it) }
             _isLoading.postValue(false)
             _popularMovies.postValue(response)
         }
@@ -35,10 +40,10 @@ class MovieListViewModel @Inject constructor(
         page = 1
     }
 
-    fun addMovieIntoDb(movieItem: MovieItem) {
+    fun addMovieIntoDb(movieDetailsItem: MovieDetailsItem) {
         viewModelScope.launch {
             _isLoading.postValue(true)
-            addMovieUseCase(movieItem)
+            addMovieUseCase(movieItemMapper.map(movieDetailsItem))
             _isLoading.postValue(false)
         }
     }

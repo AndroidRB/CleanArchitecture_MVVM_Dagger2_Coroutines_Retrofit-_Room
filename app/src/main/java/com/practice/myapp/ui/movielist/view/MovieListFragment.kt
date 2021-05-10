@@ -12,6 +12,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.practice.domain.usecase.data.MovieItem
 import com.practice.myapp.base.BaseFragment
 import com.practice.myapp.databinding.FragmentMovieListBinding
+import com.practice.myapp.mapper.model.MovieDetailsItem
 import com.practice.myapp.ui.movielist.view.adapter.PopularMoviesListAdapter
 import com.practice.myapp.ui.movielist.view.adapter.listener.OnItemClickListener
 import com.practice.myapp.ui.movielist.viewmodel.MovieListViewModel
@@ -63,7 +64,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         viewModel.getPopularMovies()
     }
 
-    private fun setPopularMovies(movieItems: List<MovieItem>) {
+    private fun setPopularMovies(movieItems: List<MovieDetailsItem>) {
         adapter.setData(movieItems)
         setEmptyState(adapter.itemCount == 0)
     }
@@ -110,7 +111,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         getPopularMovies()
     }
 
-    override fun onItemClick(movieItem: MovieItem) {
+    override fun onItemClick(movieItem: MovieDetailsItem) {
         findNavController().navigate(
             MovieListFragmentDirections.actionNavigationHomeToDetailsFragment(
                 movieItem
@@ -118,7 +119,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         )
     }
 
-    override fun onBookmarkIconClick(movieItem: MovieItem) {
+    override fun onBookmarkIconClick(movieItem: MovieDetailsItem) {
         viewModel.addMovieIntoDb(movieItem)
     }
 

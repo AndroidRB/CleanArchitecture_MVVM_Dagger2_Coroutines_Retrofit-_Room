@@ -6,9 +6,9 @@ import com.practice.data.repository.mapper.common.Mapper
 
 class GetAllMoviesMapper: Mapper<List<MovieEntity>, List<MovieItem>> {
 
-    override fun map(i: List<MovieEntity>) = i.map(::createMovieDataSet)
+    override fun map(i: List<MovieEntity>) = i.map(::createDataSet)
 
-    private fun createMovieDataSet(movieEntity: MovieEntity) =
+    private fun createDataSet(movieEntity: MovieEntity) =
         MovieItem(
             movieId = movieEntity.id.toInt(),
             movieTitle = movieEntity.name,

@@ -1,4 +1,4 @@
-package com.practice.domain.di
+package com.practice.myapp.di
 
 import com.practice.domain.repository.IMovieLocalRepository
 import com.practice.domain.repository.IMovieRemoteRepository

@@ -1,4 +1,4 @@
-package com.practice.data.di
+package com.practice.myapp.di
 
 import com.practice.data.datasource.remote.IMovieRemoteDataSource
 import com.practice.data.datasource.remote.MovieRemoteDataSourceImpl

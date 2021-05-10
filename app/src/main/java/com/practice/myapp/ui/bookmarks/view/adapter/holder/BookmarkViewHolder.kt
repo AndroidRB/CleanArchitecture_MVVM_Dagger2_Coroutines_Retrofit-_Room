@@ -5,6 +5,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.practice.domain.usecase.data.MovieItem
 import com.practice.myapp.databinding.AdapterPopularMoviesItemBinding
+import com.practice.myapp.mapper.model.MovieDetailsItem
 import com.practice.myapp.ui.bookmarks.view.adapter.listener.OnItemClickListener
 import com.practice.myapp.util.Constants
 
@@ -12,7 +13,7 @@ class BookmarkViewHolder(
     private val itemBinding: AdapterPopularMoviesItemBinding
     ) : RecyclerView.ViewHolder(itemBinding.root) {
 
-    private lateinit var item: MovieItem
+    private lateinit var item: MovieDetailsItem
     private lateinit var listener: OnItemClickListener
 
     init {
@@ -24,7 +25,7 @@ class BookmarkViewHolder(
         }
     }
 
-    fun bind(item: MovieItem, listener: OnItemClickListener) {
+    fun bind(item: MovieDetailsItem, listener: OnItemClickListener) {
         this.item = item
         this.listener = listener
 
