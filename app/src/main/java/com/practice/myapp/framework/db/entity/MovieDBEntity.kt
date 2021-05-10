@@ -5,7 +5,7 @@ import androidx.room.Entity
 import androidx.room.PrimaryKey
 
 @Entity(tableName = "popular_movies_table")
-data class MovieEntity(
+data class MovieDBEntity(
     @PrimaryKey(autoGenerate = true)
     @ColumnInfo(name = "movie_id")
     var id: Long = 0,

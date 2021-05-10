@@ -4,7 +4,7 @@ import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.OnConflictStrategy
 import androidx.room.Query
-import com.practice.myapp.framework.db.entity.MovieEntity
+import com.practice.myapp.framework.db.entity.MovieDBEntity
 
 /**
  * Data access object contains operations over databases
@@ -12,10 +12,10 @@ import com.practice.myapp.framework.db.entity.MovieEntity
 @Dao
 interface MovieDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(movie: MovieEntity)
+    suspend fun insert(movieDB: MovieDBEntity)
 
     @Query("SELECT * FROM popular_movies_table")
-    suspend fun getAllMovies(): List<MovieEntity>
+    suspend fun getAllMovies(): List<MovieDBEntity>
 
     @Query("DELETE FROM popular_movies_table WHERE movie_id = :movieId")
     suspend fun deleteMovie(movieId: Long)

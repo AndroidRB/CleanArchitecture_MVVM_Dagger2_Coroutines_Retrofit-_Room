@@ -1,7 +1,7 @@
 package com.practice.myapp.framework.db
 
 import com.practice.data.datasource.IMovieLocalDataSource
-import com.practice.data.model.Movie
+import com.practice.data.model.MovieEntity
 import com.practice.myapp.framework.db.dao.MovieDao
 import com.practice.myapp.presentation.viewmodel.mapper.MovieDataListMapper
 import com.practice.myapp.presentation.viewmodel.mapper.MovieEntityMapper
@@ -14,8 +14,8 @@ class MovieLocalDataSourceImpl (
     private val movieDataListMapper: MovieDataListMapper
 ) : IMovieLocalDataSource {
 
-    override suspend fun insertMovie(movie: Movie) = withContext(Dispatchers.IO) {
-        return@withContext dao.insert(movieEntityMapper.map(movie))
+    override suspend fun insertMovie(movieEntity: MovieEntity) = withContext(Dispatchers.IO) {
+        return@withContext dao.insert(movieEntityMapper.map(movieEntity))
     }
 
     override suspend fun getAllMovies() = withContext(Dispatchers.IO) {

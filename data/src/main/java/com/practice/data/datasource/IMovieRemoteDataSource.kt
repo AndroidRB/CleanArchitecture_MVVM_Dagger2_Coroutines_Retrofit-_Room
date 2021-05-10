@@ -1,7 +1,7 @@
 package com.practice.data.datasource
 
-import com.practice.data.model.Movie
+import com.practice.data.model.MovieEntity
 
 interface IMovieRemoteDataSource {
-    suspend fun getPopularMovies(page: Int): List<Movie>
+    suspend fun getPopularMovies(page: Int): List<MovieEntity>
 }
