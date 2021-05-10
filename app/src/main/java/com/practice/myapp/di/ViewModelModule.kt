@@ -2,10 +2,10 @@ package com.practice.myapp.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
-import com.practice.myapp.base.ViewModelFactory
-import com.practice.myapp.base.ViewModelKey
-import com.practice.myapp.ui.bookmarks.viewmodel.BookmarkViewModel
-import com.practice.myapp.ui.movielist.viewmodel.MovieListViewModel
+import com.practice.myapp.presentation.base.ViewModelFactory
+import com.practice.myapp.presentation.base.ViewModelKey
+import com.practice.myapp.presentation.viewmodel.BookmarkViewModel
+import com.practice.myapp.presentation.viewmodel.MovieListViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

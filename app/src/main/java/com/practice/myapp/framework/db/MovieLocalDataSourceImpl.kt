@@ -4,7 +4,6 @@ import com.practice.data.datasource.IMovieLocalDataSource
 import com.practice.data.model.Movie
 import com.practice.myapp.framework.db.dao.MovieDao
 import com.practice.myapp.mapper.MovieDataListMapper
-import com.practice.myapp.mapper.MovieDataMapper
 import com.practice.myapp.mapper.MovieEntityMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
