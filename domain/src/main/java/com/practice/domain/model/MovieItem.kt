@@ -1,4 +1,4 @@
-package com.practice.domain.usecase.data
+package com.practice.domain.model
 
 data class MovieItem(
     val movieId: Int,

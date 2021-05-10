@@ -2,7 +2,7 @@ package com.practice.data.repository.mapper.remote
 
 import com.practice.data.model.Movie
 import com.practice.data.repository.mapper.common.Mapper
-import com.practice.domain.usecase.data.MovieItem
+import com.practice.domain.model.MovieItem
 
 class PopularMoviesListMapper :
     Mapper<List<Movie>, List<MovieItem>?> {

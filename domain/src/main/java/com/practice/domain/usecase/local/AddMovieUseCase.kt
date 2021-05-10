@@ -1,6 +1,6 @@
 package com.practice.domain.usecase.local
 
-import com.practice.domain.usecase.data.MovieItem
+import com.practice.domain.model.MovieItem
 import com.practice.domain.repository.IMovieLocalRepository
 
 class AddMovieUseCase(
