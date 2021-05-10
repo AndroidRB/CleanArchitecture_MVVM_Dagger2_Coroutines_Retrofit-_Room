@@ -1,4 +1,4 @@
-package com.practice.myapp.mapper
+package com.practice.myapp.presentation.viewmodel.mapper
 
 import com.practice.data.model.Movie
 import com.practice.data.repository.mapper.common.Mapper

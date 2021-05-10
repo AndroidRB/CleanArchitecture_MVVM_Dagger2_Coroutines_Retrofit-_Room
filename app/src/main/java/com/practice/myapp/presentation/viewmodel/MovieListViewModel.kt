@@ -5,9 +5,9 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.practice.domain.usecase.local.AddMovieUseCase
 import com.practice.domain.usecase.remote.GetPopularMoviesUseCase
-import com.practice.myapp.mapper.MovieItemMapper
-import com.practice.myapp.mapper.MoviesDetailsListMapper
-import com.practice.myapp.mapper.model.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.mapper.MovieItemMapper
+import com.practice.myapp.presentation.viewmodel.mapper.MoviesDetailsListMapper
+import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 

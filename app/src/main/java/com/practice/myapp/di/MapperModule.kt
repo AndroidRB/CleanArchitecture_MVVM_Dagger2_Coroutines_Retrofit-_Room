@@ -3,7 +3,7 @@ package com.practice.myapp.di
 import com.practice.data.repository.mapper.local.AddMovieMapper
 import com.practice.data.repository.mapper.local.GetAllMoviesMapper
 import com.practice.data.repository.mapper.remote.PopularMoviesListMapper
-import com.practice.myapp.mapper.*
+import com.practice.myapp.presentation.viewmodel.mapper.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

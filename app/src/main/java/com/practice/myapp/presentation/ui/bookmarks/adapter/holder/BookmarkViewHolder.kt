@@ -4,7 +4,7 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.practice.myapp.databinding.AdapterPopularMoviesItemBinding
-import com.practice.myapp.mapper.model.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
 import com.practice.myapp.presentation.ui.bookmarks.adapter.listener.OnItemClickListener
 import com.practice.myapp.presentation.util.Constants
 

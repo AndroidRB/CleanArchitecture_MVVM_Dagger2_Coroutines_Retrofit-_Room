@@ -1,4 +1,4 @@
-package com.practice.myapp.mapper.model
+package com.practice.myapp.presentation.viewmodel.data
 
 import android.os.Parcelable
 import kotlinx.parcelize.Parcelize

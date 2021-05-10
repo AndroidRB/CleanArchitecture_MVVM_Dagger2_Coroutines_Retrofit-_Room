@@ -1,8 +1,8 @@
-package com.practice.myapp.mapper
+package com.practice.myapp.presentation.viewmodel.mapper
 
 import com.practice.data.repository.mapper.common.Mapper
 import com.practice.domain.usecase.data.MovieItem
-import com.practice.myapp.mapper.model.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
 
 class MoviesDetailsListMapper: Mapper<List<MovieItem>, List<MovieDetailsItem>> {
 

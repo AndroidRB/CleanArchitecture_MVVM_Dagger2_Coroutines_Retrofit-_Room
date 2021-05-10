@@ -12,7 +12,7 @@ import com.practice.myapp.databinding.FragmentBookmarkBinding
 import com.practice.myapp.presentation.ui.bookmarks.adapter.BookmarkAdapter
 import com.practice.myapp.presentation.ui.bookmarks.adapter.listener.OnItemClickListener
 import com.practice.myapp.presentation.viewmodel.BookmarkViewModel
-import com.practice.myapp.mapper.model.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
 
 class BookmarkFragment : BaseFragment(), OnItemClickListener {
 

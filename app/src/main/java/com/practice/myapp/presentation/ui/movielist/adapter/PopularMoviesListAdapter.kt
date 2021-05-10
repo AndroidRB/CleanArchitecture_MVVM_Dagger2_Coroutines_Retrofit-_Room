@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.practice.myapp.databinding.AdapterPopularMoviesItemBinding
-import com.practice.myapp.mapper.model.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
 import com.practice.myapp.presentation.ui.movielist.adapter.holder.PopularMoviesListViewHolder
 import com.practice.myapp.presentation.ui.movielist.adapter.listener.OnItemClickListener
 

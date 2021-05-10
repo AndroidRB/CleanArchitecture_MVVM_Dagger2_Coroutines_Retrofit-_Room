@@ -3,8 +3,8 @@ package com.practice.myapp.framework.db
 import com.practice.data.datasource.IMovieLocalDataSource
 import com.practice.data.model.Movie
 import com.practice.myapp.framework.db.dao.MovieDao
-import com.practice.myapp.mapper.MovieDataListMapper
-import com.practice.myapp.mapper.MovieEntityMapper
+import com.practice.myapp.presentation.viewmodel.mapper.MovieDataListMapper
+import com.practice.myapp.presentation.viewmodel.mapper.MovieEntityMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 

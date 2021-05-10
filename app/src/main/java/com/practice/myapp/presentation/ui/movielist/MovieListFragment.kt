@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.practice.myapp.presentation.base.BaseFragment
 import com.practice.myapp.databinding.FragmentMovieListBinding
-import com.practice.myapp.mapper.model.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
 import com.practice.myapp.presentation.ui.movielist.adapter.PopularMoviesListAdapter
 import com.practice.myapp.presentation.ui.movielist.adapter.listener.OnItemClickListener
 import com.practice.myapp.presentation.viewmodel.MovieListViewModel

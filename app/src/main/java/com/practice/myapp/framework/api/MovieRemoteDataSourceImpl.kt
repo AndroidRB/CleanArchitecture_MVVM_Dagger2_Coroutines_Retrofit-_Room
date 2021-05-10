@@ -1,7 +1,7 @@
 package com.practice.myapp.framework.api
 
 import com.practice.data.datasource.IMovieRemoteDataSource
-import com.practice.myapp.mapper.GetPopularMoviesMapper
+import com.practice.myapp.presentation.viewmodel.mapper.GetPopularMoviesMapper
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import javax.inject.Inject
