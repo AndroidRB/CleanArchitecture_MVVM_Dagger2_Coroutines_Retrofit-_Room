@@ -1,4 +1,4 @@
-package com.practice.myapp.di
+package com.practice.myapp.framework.di
 
 import com.practice.data.repository.mapper.local.AddMovieMapper
 import com.practice.data.repository.mapper.local.GetAllMoviesMapper

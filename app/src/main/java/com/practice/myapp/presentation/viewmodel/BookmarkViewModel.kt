@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.practice.domain.usecase.local.GetAllMoviesUseCase
 import com.practice.domain.usecase.local.RemoveMovieUseCase
 import com.practice.myapp.presentation.viewmodel.mapper.MoviesDetailsListMapper
-import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieView
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -16,7 +16,7 @@ class BookmarkViewModel @Inject constructor(
     private val moviesDetailsListMapper: MoviesDetailsListMapper
 ): ViewModel() {
 
-    private var _moviesFromDb = MutableLiveData<List<MovieDetailsItem>>()
+    private var _moviesFromDb = MutableLiveData<List<MovieView>>()
     val moviesFromDb = _moviesFromDb
 
     private var _isLoading = MutableLiveData<Boolean>()

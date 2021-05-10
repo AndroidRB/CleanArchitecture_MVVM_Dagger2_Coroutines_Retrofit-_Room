@@ -3,14 +3,14 @@ package com.practice.myapp.presentation.ui.movielist.adapter.holder
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.practice.myapp.databinding.AdapterPopularMoviesItemBinding
-import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieView
 import com.practice.myapp.presentation.ui.movielist.adapter.listener.OnItemClickListener
 import com.practice.myapp.presentation.util.Constants
 
 class PopularMoviesListViewHolder(private val itemBinding: AdapterPopularMoviesItemBinding) :
     RecyclerView.ViewHolder(itemBinding.root) {
 
-    private lateinit var item: MovieDetailsItem
+    private lateinit var item: MovieView
     private lateinit var listener: OnItemClickListener
 
     init {
@@ -22,7 +22,7 @@ class PopularMoviesListViewHolder(private val itemBinding: AdapterPopularMoviesI
         }
     }
 
-    fun bind(item: MovieDetailsItem, listener: OnItemClickListener) {
+    fun bind(item: MovieView, listener: OnItemClickListener) {
         this.item = item
         this.listener = listener
 

@@ -1,4 +1,4 @@
-package com.practice.myapp.di
+package com.practice.myapp.framework.di
 
 import com.practice.data.datasource.IMovieLocalDataSource
 import com.practice.myapp.framework.db.MovieLocalDataSourceImpl

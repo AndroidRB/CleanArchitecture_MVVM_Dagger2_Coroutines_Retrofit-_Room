@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.practice.myapp.databinding.AdapterPopularMoviesItemBinding
-import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieView
 import com.practice.myapp.presentation.ui.movielist.adapter.holder.PopularMoviesListViewHolder
 import com.practice.myapp.presentation.ui.movielist.adapter.listener.OnItemClickListener
 
 class PopularMoviesListAdapter(
-    private val mDataSet: MutableList<MovieDetailsItem>,
+    private val mDataSet: MutableList<MovieView>,
     private val listener: OnItemClickListener
 ) : RecyclerView.Adapter<PopularMoviesListViewHolder>() {
 
@@ -37,7 +37,7 @@ class PopularMoviesListAdapter(
         return mDataSet.size
     }
 
-    fun setData(mDataSet: List<MovieDetailsItem>?) {
+    fun setData(mDataSet: List<MovieView>?) {
         if (mDataSet != null) {
             this.mDataSet.addAll(mDataSet)
         }

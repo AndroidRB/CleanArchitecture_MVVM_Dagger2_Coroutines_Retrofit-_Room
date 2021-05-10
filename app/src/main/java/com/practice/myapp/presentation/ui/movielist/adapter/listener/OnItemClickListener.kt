@@ -1,8 +1,8 @@
 package com.practice.myapp.presentation.ui.movielist.adapter.listener
 
-import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieView
 
 interface OnItemClickListener {
-    fun onItemClick(movieItem: MovieDetailsItem)
-    fun onBookmarkIconClick(movieItem: MovieDetailsItem)
+    fun onItemClick(movieItem: MovieView)
+    fun onBookmarkIconClick(movieItem: MovieView)
 }

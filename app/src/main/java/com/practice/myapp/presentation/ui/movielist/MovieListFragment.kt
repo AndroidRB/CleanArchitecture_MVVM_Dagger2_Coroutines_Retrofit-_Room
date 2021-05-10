@@ -11,7 +11,7 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.practice.myapp.presentation.base.BaseFragment
 import com.practice.myapp.databinding.FragmentMovieListBinding
-import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieView
 import com.practice.myapp.presentation.ui.movielist.adapter.PopularMoviesListAdapter
 import com.practice.myapp.presentation.ui.movielist.adapter.listener.OnItemClickListener
 import com.practice.myapp.presentation.viewmodel.MovieListViewModel
@@ -63,7 +63,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         viewModel.getPopularMovies()
     }
 
-    private fun setPopularMovies(movieItems: List<MovieDetailsItem>) {
+    private fun setPopularMovies(movieItems: List<MovieView>) {
         adapter.setData(movieItems)
         setEmptyState(adapter.itemCount == 0)
     }
@@ -110,7 +110,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         getPopularMovies()
     }
 
-    override fun onItemClick(movieItem: MovieDetailsItem) {
+    override fun onItemClick(movieItem: MovieView) {
         findNavController().navigate(
             MovieListFragmentDirections.actionNavigationHomeToDetailsFragment(
                 movieItem
@@ -118,7 +118,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         )
     }
 
-    override fun onBookmarkIconClick(movieItem: MovieDetailsItem) {
+    override fun onBookmarkIconClick(movieItem: MovieView) {
         viewModel.addMovieIntoDb(movieItem)
     }
 

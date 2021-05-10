@@ -6,7 +6,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.practice.myapp.databinding.FragmentDetailsBinding
-import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieView
 import com.practice.myapp.presentation.base.BaseFragment
 import com.practice.myapp.presentation.util.loadImageUrl
 
@@ -16,7 +16,7 @@ class DetailsFragment : BaseFragment() {
     private val binding get() = _binding
 
     private val navArgs by navArgs<DetailsFragmentArgs>()
-    private var movieItem: MovieDetailsItem? = null
+    private var movieItem: MovieView? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,

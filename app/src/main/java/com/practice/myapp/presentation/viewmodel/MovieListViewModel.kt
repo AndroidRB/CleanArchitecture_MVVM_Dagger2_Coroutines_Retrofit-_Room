@@ -7,7 +7,7 @@ import com.practice.domain.usecase.local.AddMovieUseCase
 import com.practice.domain.usecase.remote.GetPopularMoviesUseCase
 import com.practice.myapp.presentation.viewmodel.mapper.MovieItemMapper
 import com.practice.myapp.presentation.viewmodel.mapper.MoviesDetailsListMapper
-import com.practice.myapp.presentation.viewmodel.data.MovieDetailsItem
+import com.practice.myapp.presentation.viewmodel.data.MovieView
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -18,7 +18,7 @@ class MovieListViewModel @Inject constructor(
     private val moviesDetailsListMapper: MoviesDetailsListMapper
 ) : ViewModel() {
 
-    private var _popularMovies = MutableLiveData<List<MovieDetailsItem>>()
+    private var _popularMovies = MutableLiveData<List<MovieView>>()
     val popularMovies = _popularMovies
 
     private var _isLoading = MutableLiveData<Boolean>()
@@ -39,10 +39,10 @@ class MovieListViewModel @Inject constructor(
         page = 1
     }
 
-    fun addMovieIntoDb(movieDetailsItem: MovieDetailsItem) {
+    fun addMovieIntoDb(movieView: MovieView) {
         viewModelScope.launch {
             _isLoading.postValue(true)
-            addMovieUseCase(movieItemMapper.map(movieDetailsItem))
+            addMovieUseCase(movieItemMapper.map(movieView))
             _isLoading.postValue(false)
         }
     }

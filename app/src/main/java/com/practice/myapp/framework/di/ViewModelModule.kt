@@ -1,4 +1,4 @@
-package com.practice.myapp.di
+package com.practice.myapp.framework.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

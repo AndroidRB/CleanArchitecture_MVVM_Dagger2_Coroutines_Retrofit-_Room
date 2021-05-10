@@ -1,4 +1,4 @@
-package com.practice.myapp.di
+package com.practice.myapp.framework.di
 
 import androidx.viewbinding.BuildConfig
 import com.google.gson.GsonBuilder
