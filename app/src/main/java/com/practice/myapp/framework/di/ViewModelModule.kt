@@ -9,6 +9,7 @@ import com.practice.myapp.presentation.viewmodel.MovieListViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ViewModelComponent
 import dagger.hilt.components.SingletonComponent
 import dagger.multibindings.IntoMap
 
