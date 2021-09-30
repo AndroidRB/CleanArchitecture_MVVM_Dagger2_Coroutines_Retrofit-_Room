@@ -6,9 +6,11 @@ import androidx.lifecycle.viewModelScope
 import com.practice.domain.model.Movie
 import com.practice.domain.usecase.local.AddMovieUseCase
 import com.practice.domain.usecase.remote.GetPopularMoviesUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class MovieListViewModel @Inject constructor(
     private val getPopularMoviesUseCase: GetPopularMoviesUseCase,
     private val addMovieUseCase: AddMovieUseCase

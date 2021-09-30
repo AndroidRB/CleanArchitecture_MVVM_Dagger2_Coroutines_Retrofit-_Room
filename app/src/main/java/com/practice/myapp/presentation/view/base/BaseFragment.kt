@@ -1,11 +1,9 @@
-package com.practice.myapp.presentation.base
+package com.practice.myapp.presentation.view.base
 
 import androidx.fragment.app.Fragment
 import dagger.hilt.android.AndroidEntryPoint
-import javax.inject.Inject
 
 @AndroidEntryPoint
 abstract class BaseFragment : Fragment() {
 
-    @Inject lateinit var viewModelFactory: ViewModelFactory
 }

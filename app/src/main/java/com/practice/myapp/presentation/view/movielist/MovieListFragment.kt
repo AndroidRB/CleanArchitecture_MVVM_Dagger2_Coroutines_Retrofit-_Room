@@ -5,13 +5,13 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.widget.NestedScrollView
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.practice.domain.model.Movie
-import com.practice.myapp.presentation.base.BaseFragment
 import com.practice.myapp.databinding.FragmentMovieListBinding
+import com.practice.myapp.presentation.view.base.BaseFragment
 import com.practice.myapp.presentation.view.movielist.adapter.PopularMoviesListAdapter
 import com.practice.myapp.presentation.view.movielist.adapter.listener.OnItemClickListener
 import com.practice.myapp.presentation.viewmodel.MovieListViewModel
@@ -22,7 +22,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
     private var _binding: FragmentMovieListBinding? = null
     private val binding get() = _binding
 
-    private lateinit var viewModel: MovieListViewModel
+    private val viewModel: MovieListViewModel by viewModels()
     private lateinit var gridLayoutManager: GridLayoutManager
     private lateinit var adapter: PopularMoviesListAdapter
 
@@ -43,7 +43,6 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
     }
 
     private fun initValues() {
-        viewModel = ViewModelProvider(this, viewModelFactory).get(MovieListViewModel::class.java)
         adapter = PopularMoviesListAdapter(mutableListOf(), this)
         gridLayoutManager = GridLayoutManager(requireContext(), 2)
         binding?.rvContainer?.layoutManager = gridLayoutManager

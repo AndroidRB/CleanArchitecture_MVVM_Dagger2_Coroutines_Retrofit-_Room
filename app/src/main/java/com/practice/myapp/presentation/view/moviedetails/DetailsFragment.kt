@@ -7,7 +7,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.practice.domain.model.Movie
 import com.practice.myapp.databinding.FragmentDetailsBinding
-import com.practice.myapp.presentation.base.BaseFragment
+import com.practice.myapp.presentation.view.base.BaseFragment
 import com.practice.myapp.common.extensions.loadImageUrl
 
 class DetailsFragment : BaseFragment() {

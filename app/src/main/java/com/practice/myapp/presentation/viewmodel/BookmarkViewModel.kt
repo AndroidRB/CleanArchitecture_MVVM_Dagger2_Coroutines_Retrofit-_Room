@@ -6,9 +6,11 @@ import androidx.lifecycle.viewModelScope
 import com.practice.domain.model.Movie
 import com.practice.domain.usecase.local.GetAllMoviesUseCase
 import com.practice.domain.usecase.local.RemoveMovieUseCase
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
+@HiltViewModel
 class BookmarkViewModel @Inject constructor(
     private val getAllMoviesUseCase: GetAllMoviesUseCase,
     private val removeMovieUseCase: RemoveMovieUseCase,

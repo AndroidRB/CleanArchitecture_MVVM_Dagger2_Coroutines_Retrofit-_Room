@@ -4,11 +4,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.lifecycle.ViewModelProvider
+import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.practice.domain.model.Movie
-import com.practice.myapp.presentation.base.BaseFragment
+import com.practice.myapp.presentation.view.base.BaseFragment
 import com.practice.myapp.databinding.FragmentBookmarkBinding
 import com.practice.myapp.presentation.view.bookmarks.adapter.BookmarkAdapter
 import com.practice.myapp.presentation.view.bookmarks.adapter.listener.OnItemClickListener
@@ -19,7 +19,7 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
     private var _binding: FragmentBookmarkBinding? = null
     private val binding get() = _binding
 
-    private lateinit var viewModel: BookmarkViewModel
+    private val viewModel: BookmarkViewModel by viewModels()
     private lateinit var adapter: BookmarkAdapter
 
     override fun onCreateView(
@@ -38,7 +38,6 @@ class BookmarkFragment : BaseFragment(), OnItemClickListener {
     }
 
     private fun initValues() {
-        viewModel = ViewModelProvider(this, viewModelFactory).get(BookmarkViewModel::class.java)
         binding?.rvContainer?.layoutManager = LinearLayoutManager(requireContext())
         adapter = BookmarkAdapter(mutableListOf(), this)
         binding?.rvContainer?.adapter = adapter
