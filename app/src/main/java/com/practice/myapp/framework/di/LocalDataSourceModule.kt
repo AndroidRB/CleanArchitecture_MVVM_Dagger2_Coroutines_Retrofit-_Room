@@ -11,6 +11,11 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
+/**
+ *Here in this module we can see the difference between @Binds and @Provides
+ *If we want to bind interface we must put @Inject in constructor like we put in MovieRemoteDataSource class,
+ * else we can provide class without constructor inject, like in MovieLocalDataSource class
+ */
 @Module
 @InstallIn(SingletonComponent::class)
 class LocalDataSourceModule {
