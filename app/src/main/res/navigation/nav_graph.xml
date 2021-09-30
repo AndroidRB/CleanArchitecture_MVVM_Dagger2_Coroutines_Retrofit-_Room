@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.practice.myapp.presentation.ui.movielist.MovieListFragment"
+        android:name="com.practice.myapp.presentation.view.movielist.MovieListFragment"
         android:label="@string/title_home"
         tools:layout="@layout/fragment_movie_list">
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/navigation_bookmark"
-        android:name="com.practice.myapp.presentation.ui.bookmarks.BookmarkFragment"
+        android:name="com.practice.myapp.presentation.view.bookmarks.BookmarkFragment"
         android:label="@string/title_database"
         tools:layout="@layout/fragment_bookmark" >
         <action
@@ -27,17 +27,17 @@
 
     <fragment
         android:id="@+id/navigation_settings"
-        android:name="com.practice.myapp.presentation.ui.settings.SettingsFragment"
+        android:name="com.practice.myapp.presentation.view.settings.SettingsFragment"
         android:label="@string/title_settings"
         tools:layout="@layout/fragment_settings" />
 
     <fragment
         android:id="@+id/detailsFragment"
-        android:name="com.practice.myapp.presentation.ui.moviedetails.DetailsFragment"
+        android:name="com.practice.myapp.presentation.view.moviedetails.DetailsFragment"
         android:label="DetailsFragment"
         tools:layout="@layout/fragment_details" >
         <argument
             android:name="movieItem"
-            app:argType="com.practice.myapp.presentation.viewmodel.data.MovieView" />
+            app:argType="com.practice.domain.model.Movie" />
     </fragment>
 </navigation>

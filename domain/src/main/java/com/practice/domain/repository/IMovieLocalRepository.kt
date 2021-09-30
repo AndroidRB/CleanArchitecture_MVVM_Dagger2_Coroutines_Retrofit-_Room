@@ -1,10 +1,10 @@
 package com.practice.domain.repository
 
-import com.practice.domain.model.MovieItem
+import com.practice.domain.model.Movie
 
 
 interface IMovieLocalRepository {
-    suspend fun insertMovie(movieItem: MovieItem)
-    suspend fun getAllMovies(): List<MovieItem>
+    suspend fun insertMovie(movie: Movie)
+    suspend fun getAllMovies(): List<Movie>
     suspend fun deleteMovie(movieId: Long)
 }

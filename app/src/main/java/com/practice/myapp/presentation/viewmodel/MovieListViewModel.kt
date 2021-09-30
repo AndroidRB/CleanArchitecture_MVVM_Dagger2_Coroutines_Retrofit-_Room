@@ -3,22 +3,18 @@ package com.practice.myapp.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.practice.domain.model.Movie
 import com.practice.domain.usecase.local.AddMovieUseCase
 import com.practice.domain.usecase.remote.GetPopularMoviesUseCase
-import com.practice.myapp.presentation.viewmodel.mapper.MovieItemMapper
-import com.practice.myapp.presentation.viewmodel.mapper.MoviesDetailsListMapper
-import com.practice.myapp.presentation.viewmodel.data.MovieView
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 class MovieListViewModel @Inject constructor(
     private val getPopularMoviesUseCase: GetPopularMoviesUseCase,
-    private val addMovieUseCase: AddMovieUseCase,
-    private val movieItemMapper: MovieItemMapper,
-    private val moviesDetailsListMapper: MoviesDetailsListMapper
+    private val addMovieUseCase: AddMovieUseCase
 ) : ViewModel() {
 
-    private var _popularMovies = MutableLiveData<List<MovieView>>()
+    private var _popularMovies = MutableLiveData<List<Movie>>()
     val popularMovies = _popularMovies
 
     private var _isLoading = MutableLiveData<Boolean>()
@@ -29,7 +25,7 @@ class MovieListViewModel @Inject constructor(
     fun getPopularMovies() {
         viewModelScope.launch {
             _isLoading.postValue(true)
-            val response = getPopularMoviesUseCase(page++)?.let { moviesDetailsListMapper.map(it) }
+            val response = getPopularMoviesUseCase(page++)
             _isLoading.postValue(false)
             _popularMovies.postValue(response)
         }
@@ -39,10 +35,10 @@ class MovieListViewModel @Inject constructor(
         page = 1
     }
 
-    fun addMovieIntoDb(movieView: MovieView) {
+    fun addMovieIntoDb(movie: Movie) {
         viewModelScope.launch {
             _isLoading.postValue(true)
-            addMovieUseCase(movieItemMapper.map(movieView))
+            addMovieUseCase(movie)
             _isLoading.postValue(false)
         }
     }

@@ -2,9 +2,6 @@ package com.practice.myapp.framework.di
 
 import com.practice.data.repository.MovieLocalRepository
 import com.practice.data.repository.MovieRemoteRepository
-import com.practice.data.repository.mapper.local.AddMovieMapper
-import com.practice.data.repository.mapper.local.GetAllMoviesMapper
-import com.practice.data.repository.mapper.remote.PopularMoviesListMapper
 import com.practice.data.datasource.IMovieLocalDataSource
 import com.practice.data.datasource.IMovieRemoteDataSource
 import com.practice.domain.repository.IMovieLocalRepository
@@ -20,18 +17,15 @@ class RepositoryModule {
 
     @Provides
     fun providesMovieRemoteRepository(
-        remoteDataSource: IMovieRemoteDataSource,
-        mapper: PopularMoviesListMapper
+        remoteDataSource: IMovieRemoteDataSource
     ): IMovieRemoteRepository {
-        return MovieRemoteRepository(remoteDataSource, mapper)
+        return MovieRemoteRepository(remoteDataSource)
     }
 
     @Provides
     fun providesMovieLocalRepository(
-        localDataSource: IMovieLocalDataSource,
-        addMovieMapper: AddMovieMapper,
-        getAllMoviesMapper: GetAllMoviesMapper
+        localDataSource: IMovieLocalDataSource
     ): IMovieLocalRepository {
-        return MovieLocalRepository(localDataSource, addMovieMapper, getAllMoviesMapper)
+        return MovieLocalRepository(localDataSource)
     }
 }

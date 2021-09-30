@@ -1,10 +1,10 @@
 package com.practice.myapp.framework.di
 
 import com.practice.data.datasource.IMovieLocalDataSource
-import com.practice.myapp.framework.db.MovieLocalDataSourceImpl
+import com.practice.myapp.framework.db.datasource.MovieLocalDataSource
 import com.practice.myapp.framework.db.dao.MovieDao
-import com.practice.myapp.presentation.viewmodel.mapper.MovieDataListMapper
-import com.practice.myapp.presentation.viewmodel.mapper.MovieEntityMapper
+import com.practice.myapp.framework.db.datasource.mapper.GetAllMoviesMapper
+import com.practice.myapp.framework.db.datasource.mapper.InsertMovieMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -19,9 +19,9 @@ class LocalDataSourceModule {
     @Provides
     fun provideLocalDataSource(
         dao: MovieDao,
-        movieEntityMapper: MovieEntityMapper,
-        movieDataListMapper: MovieDataListMapper
+        insertMovieMapper: InsertMovieMapper,
+        getAllMoviesMapper: GetAllMoviesMapper
     ): IMovieLocalDataSource {
-        return MovieLocalDataSourceImpl(dao, movieEntityMapper, movieDataListMapper)
+        return MovieLocalDataSource(dao, insertMovieMapper, getAllMoviesMapper)
     }
 }
