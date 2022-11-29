@@ -1,6 +1,6 @@
 package com.practice.myapp.presentation.view.bookmarks.adapter.listener
 
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
 
 interface OnItemClickListener {
     fun onItemClick(movie: Movie)

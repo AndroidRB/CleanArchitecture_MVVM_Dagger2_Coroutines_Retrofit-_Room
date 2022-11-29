@@ -1,7 +1,7 @@
 package com.practice.data.repository
 
-import com.practice.data.datasource.IMovieLocalDataSource
-import com.practice.domain.model.Movie
+import com.practice.data.datasource.contract.IMovieLocalDataSource
+import com.practice.domain.entity.Movie
 import com.practice.domain.repository.IMovieLocalRepository
 
 class MovieLocalRepository(

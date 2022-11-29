@@ -1,8 +1,8 @@
 package com.practice.myapp.framework.di
 
-import com.practice.myapp.framework.api.datasource.mapper.GetPopularMoviesMapper
-import com.practice.myapp.framework.db.datasource.mapper.GetAllMoviesMapper
-import com.practice.myapp.framework.db.datasource.mapper.InsertMovieMapper
+import com.practice.data.mapper.GetPopularMoviesMapper
+import com.practice.data.mapper.GetAllMoviesMapper
+import com.practice.data.mapper.InsertMovieMapper
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

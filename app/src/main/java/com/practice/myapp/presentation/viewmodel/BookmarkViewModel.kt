@@ -3,10 +3,11 @@ package com.practice.myapp.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
 import com.practice.domain.usecase.local.GetAllMoviesUseCase
 import com.practice.domain.usecase.local.RemoveMovieUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -23,7 +24,7 @@ class BookmarkViewModel @Inject constructor(
     val isLoading = _isLoading
 
     fun getPopularMoviesFromDb() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             isLoading.postValue(true)
             val response = getAllMoviesUseCase()
             isLoading.postValue(false)
@@ -32,7 +33,7 @@ class BookmarkViewModel @Inject constructor(
     }
 
     fun removeMovieFromDb(movieId: Long) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             isLoading.postValue(true)
             removeMovieUseCase(movieId)
             val response = getAllMoviesUseCase()

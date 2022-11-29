@@ -2,8 +2,8 @@ package com.practice.myapp.framework.di
 
 import android.app.Application
 import androidx.room.Room
-import com.practice.myapp.framework.db.MovieDatabase
-import com.practice.myapp.framework.db.dao.MovieDao
+import com.practice.data.db.MovieDatabase
+import com.practice.data.db.dao.MovieDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

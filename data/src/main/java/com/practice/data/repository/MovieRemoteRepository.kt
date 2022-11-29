@@ -1,6 +1,6 @@
 package com.practice.data.repository
 
-import com.practice.data.datasource.IMovieRemoteDataSource
+import com.practice.data.datasource.contract.IMovieRemoteDataSource
 import com.practice.domain.repository.IMovieRemoteRepository
 
 class MovieRemoteRepository(

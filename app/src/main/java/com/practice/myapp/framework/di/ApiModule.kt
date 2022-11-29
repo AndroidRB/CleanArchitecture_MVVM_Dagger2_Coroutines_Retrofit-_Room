@@ -2,7 +2,7 @@ package com.practice.myapp.framework.di
 
 import androidx.viewbinding.BuildConfig
 import com.google.gson.GsonBuilder
-import com.practice.myapp.framework.api.service.ApiService
+import com.practice.data.network.service.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

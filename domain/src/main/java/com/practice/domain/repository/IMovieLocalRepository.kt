@@ -1,6 +1,6 @@
 package com.practice.domain.repository
 
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
 
 
 interface IMovieLocalRepository {

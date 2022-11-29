@@ -15,7 +15,8 @@
         android:theme="@style/Theme.MyApp"
         android:usesCleartextTraffic="true"
         tools:ignore="UnusedAttribute" >
-        <activity android:name="com.practice.myapp.presentation.view.navigation.BottomNavigationActivity">
+        <activity android:name="com.practice.myapp.presentation.view.navigation.BottomNavigationActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

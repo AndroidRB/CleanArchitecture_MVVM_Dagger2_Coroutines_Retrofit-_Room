@@ -2,8 +2,8 @@ package com.practice.myapp.framework.di
 
 import com.practice.data.repository.MovieLocalRepository
 import com.practice.data.repository.MovieRemoteRepository
-import com.practice.data.datasource.IMovieLocalDataSource
-import com.practice.data.datasource.IMovieRemoteDataSource
+import com.practice.data.datasource.contract.IMovieLocalDataSource
+import com.practice.data.datasource.contract.IMovieRemoteDataSource
 import com.practice.domain.repository.IMovieLocalRepository
 import com.practice.domain.repository.IMovieRemoteRepository
 import dagger.Module

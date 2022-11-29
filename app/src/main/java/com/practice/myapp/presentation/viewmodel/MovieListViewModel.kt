@@ -3,10 +3,11 @@ package com.practice.myapp.presentation.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
 import com.practice.domain.usecase.local.AddMovieUseCase
 import com.practice.domain.usecase.remote.GetPopularMoviesUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
@@ -25,7 +26,7 @@ class MovieListViewModel @Inject constructor(
     private var page = 1
 
     fun getPopularMovies() {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _isLoading.postValue(true)
             val response = getPopularMoviesUseCase(page++)
             _isLoading.postValue(false)
@@ -38,7 +39,7 @@ class MovieListViewModel @Inject constructor(
     }
 
     fun addMovieIntoDb(movie: Movie) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             _isLoading.postValue(true)
             addMovieUseCase(movie)
             _isLoading.postValue(false)

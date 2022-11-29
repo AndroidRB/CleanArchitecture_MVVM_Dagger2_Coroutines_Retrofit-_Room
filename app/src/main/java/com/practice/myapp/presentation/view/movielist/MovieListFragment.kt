@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
 import com.practice.myapp.databinding.FragmentMovieListBinding
 import com.practice.myapp.presentation.view.base.BaseFragment
 import com.practice.myapp.presentation.view.movielist.adapter.PopularMoviesListAdapter
@@ -82,7 +82,7 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
     }
 
     override fun onScrollChange(
-        v: NestedScrollView?,
+        v: NestedScrollView,
         scrollX: Int,
         scrollY: Int,
         oldScrollX: Int,
@@ -125,4 +125,5 @@ class MovieListFragment : BaseFragment(), NestedScrollView.OnScrollChangeListene
         super.onDestroyView()
         _binding = null
     }
+
 }

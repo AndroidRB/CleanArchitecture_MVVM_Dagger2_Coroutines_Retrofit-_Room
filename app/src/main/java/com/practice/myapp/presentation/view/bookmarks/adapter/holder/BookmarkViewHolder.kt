@@ -2,11 +2,10 @@ package com.practice.myapp.presentation.view.bookmarks.adapter.holder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.bumptech.glide.Glide
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
+import com.practice.myapp.common.extensions.loadImageUrl
 import com.practice.myapp.databinding.AdapterPopularMoviesItemBinding
 import com.practice.myapp.presentation.view.bookmarks.adapter.listener.OnItemClickListener
-import com.practice.myapp.common.Constants
 
 class BookmarkViewHolder(
     private val itemBinding: AdapterPopularMoviesItemBinding
@@ -32,8 +31,6 @@ class BookmarkViewHolder(
         itemBinding.ivRemove.visibility = View.VISIBLE
 
         itemBinding.tvTitle.text = item.movieTitle
-        Glide.with(itemView.context)
-            .load(Constants.IMAGE_BASE_URL + item.moviePosterUrl)
-            .into(itemBinding.ivBg)
+        itemBinding.ivBg.loadImageUrl(item.moviePosterUrl)
     }
 }

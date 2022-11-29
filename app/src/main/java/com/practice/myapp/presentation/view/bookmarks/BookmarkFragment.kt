@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
 import com.practice.myapp.presentation.view.base.BaseFragment
 import com.practice.myapp.databinding.FragmentBookmarkBinding
 import com.practice.myapp.presentation.view.bookmarks.adapter.BookmarkAdapter

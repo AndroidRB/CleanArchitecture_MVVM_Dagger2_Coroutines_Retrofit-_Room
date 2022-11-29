@@ -3,7 +3,7 @@ package com.practice.myapp.presentation.view.movielist.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
 import com.practice.myapp.databinding.AdapterPopularMoviesItemBinding
 import com.practice.myapp.presentation.view.movielist.adapter.holder.PopularMoviesListViewHolder
 import com.practice.myapp.presentation.view.movielist.adapter.listener.OnItemClickListener

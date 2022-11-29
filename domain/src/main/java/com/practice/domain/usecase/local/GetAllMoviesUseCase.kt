@@ -1,6 +1,6 @@
 package com.practice.domain.usecase.local
 
-import com.practice.domain.model.Movie
+import com.practice.domain.entity.Movie
 import com.practice.domain.repository.IMovieLocalRepository
 
 class GetAllMoviesUseCase(
